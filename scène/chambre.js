@@ -40,7 +40,7 @@ sac.onHover(() => {if(début >= 3){
 sac.onHoverEnd(() => {
     sac.stop();
     sac.frame = 1;
-    loquace.clear(); // ← efface le message loquace
+    //loquace.clear(); // ← efface le message loquace
 });
 
 sac.onClick(() => {if(début >= 3){
@@ -69,7 +69,7 @@ sac.onClick(() => {if(début >= 3){
         box.onHoverEnd(() =>{    
             box.stop()
             box.frame = 1
-            loquace.clear()
+           // loquace.clear()
         })
 
         box.onClick(()=>{if(début >= 3){
@@ -98,7 +98,7 @@ sac.onClick(() => {if(début >= 3){
         devoir.onHoverEnd(() =>{    
             devoir.stop()
             devoir.frame = 1
-            loquace.clear()
+          //  loquace.clear() <= fait disparaitre les bulles de dialogues aussi....
         })
 
         devoir.onClick(()=>{if(début >= 3){

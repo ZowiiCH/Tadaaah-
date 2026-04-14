@@ -74,6 +74,7 @@ loquace.characters({
 //_________________________ SPRITES___________________________
 loadSprite('menu', '/assets/menu.png')
 loadSprite('bus', '/assets/bus.png');
+loadSprite('ecole','/assets/ecole.png') 
 loadSprite('busPaneau', '/assets/busPaneau.png', {
     sliceX: 1,
     sliceY: 2,
@@ -114,6 +115,5 @@ loadSprite('BVerte', 'assets/bulleVerte.png')
 
 // souris
 loadSprite('cursor', '/assets/cursor.png')
-loadSprite('ecole','/assets/ecole.png')
 
-go('menu')
+go('ecole')

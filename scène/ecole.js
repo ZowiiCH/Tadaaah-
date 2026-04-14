@@ -13,279 +13,173 @@ function init(){
         ]);
 
         let début = 0
+        console.log(etat.retardMaison, etat.retardBus);
 
-        console.log(etat.retardMaison, etat.retardBus)
-        if(etat.retardMaison >= 3 && etat.retardBus >=2000){
-    
+        if(etat.retardMaison >= 3 && etat.retardBus >=5000){
             onButtonPress("space",()=> {loquace.next( ), début++, console.log(début)});
-        loquace.script([
-            "e Bonjour, j'ai l'habitude que vous soyez en retard, mais aujourd'hui c'est un reccord",
-            "j Bonjour, je suis désolé....",
-            "e il va me falloir votre agenda, pour un tel retard, c'est malheureusement une heure d'arrêt.",
-            "j Mes parents vont me buté",
-
-        ]);
-
-        }else if(etat.retardMaison >= 3 && etat.retardBus < 2000 ||etat.retardMaison < 3 && etat.retardBus > 2000){
-          
-                onButtonPress("space",()=> {loquace.next( ), début++, console.log(début)});
-                    loquace.script([
-            "e Bonjour ! encore une arrivée tardive, c'est déjà la deuxième.",
-            "j Bonjour, je suis désolé....",
-            "e C'est le dernier avertissement, la prochaine fois ce sera l'heure d'arrêt.",
-            "j ouf, je l'ai échapé belle, mais je peux plus faire d'erreur....",
-            ])
+            loquace.script([
+                "e Bonjour, j'ai l'habitude que vous soyez en retard, mais aujourd'hui c'est un reccord",
+                "j Bonjour, je suis désolé....",
+                "e il va me falloir votre agenda, pour un tel retard, c'est malheureusement une heure d'arrêt.",
+                "j Mes parents vont me buté",
+                "e Bien, tout le monde à sa table, nous allons commencé le cours",
+            ]);
+            wait(10, () => {
+                loquace.pop("appuie sur espace pour rester concentré !")
+                barreConcentration();
+            });
+        }else if(etat.retardMaison >= 3 && etat.retardBus < 5000 ||etat.retardMaison < 3 && etat.retardBus > 5000){         
+            onButtonPress("space",()=> {loquace.next( ), début++, console.log(début)});
+            loquace.script([
+                "e Bonjour ! encore une arrivée tardive, c'est déjà la deuxième.",
+                "j Bonjour, je suis désolé....",
+                "e C'est le dernier avertissement, la prochaine fois ce sera l'heure d'arrêt.",
+                "j ouf, je l'ai échapé belle, mais je peux plus faire d'erreur....",
+                "e Bien, tout le monde à sa table, nous allons commencé le cours",
+            ]);
+            wait(10, () => {
+                loquace.pop("appuie sur espace pour rester concentré !")
+                barreConcentration();
+            });
         }else{
-
             onButtonPress("space",()=> {loquace.next( ), début++, console.log(début)});
-                    loquace.script([
-            "e Bonjour ! Cela fait plaisir de vous voir à l'heure.",
-            "j Bonjour, merci Monsieur ! J'essaie vraiment de faire des efforts.",
-            "e Oui et cela se voit. Continuez ainsi !",
-            "j J'ai commencé à bien utilisé mon réveil et mon timer, je suis moins souvent en retard.",
-            ])
+            loquace.script([
+                "e Bonjour ! Cela fait plaisir de vous voir à l'heure.",
+                "j Bonjour, merci Monsieur ! J'essaie vraiment de faire des efforts.",
+                "e Oui et cela se voit. Continuez ainsi !",
+                "j J'ai commencé à bien utilisé mon réveil et mon timer, je suis moins souvent en retard.",
+                "e Bien, tout le monde à sa table, nous allons commencé le cours",
+            ]);
+            wait(10, () => {
+                loquace.pop("appuie sur espace pour rester concentré !")
+                barreConcentration();
+            });
         }
+
+
     })
 
 
-    //______________ fonction de Gianni______________
-// function duel1() {
-//     scene("duel1", () => {
 
-//         setGravity(1000)
+function barreConcentration() {
+    
+    let concentration = 50; // commence au milieu
+    let maxConcentration = 100;
+    let actif = true;
 
-//         let klint = add([
-//             sprite("klint"),
-//             pos(100, 200),
-//             scale(5),
-//             area(),
-//             body(),
-//         ])
+    // Zones
+    const ZONE_DISTRACTION = 30;   // en dessous = distrait
+    const ZONE_HYPERFOCUS = 70;    // au dessus = hyperfocalisé
 
-//         let ennemi = add([
-//             rect(150, 270),
-//             color(BLACK),
-//             pos(width()-300, 200),
-//             area(),
-//             body(),
-//         ])
+    // Vitesse de chute qui varie aléatoirement
+    let vitessChute = 15;
+    let tempsProchainChangement = 0;
 
-//         // Dialogues :
-//         // loquace.script([
-//         //     "Hello world from KAPLAY Loquace",
-//         //     "This is a narrator dialog",
-//         // ]);
+    // ── Fond de la barre ──
+    const barFond = add([
+        rect(500, 30),
+        pos(50, 500),
+        color(rgb(50, 50, 50)),
+        z(1),
+        "barreConcentration"
+    ]);
 
-//         let tension = 0
-//         let maxtension = 100
-//         let dueltime = 0
-//         let timeingreen = 0 // si Klint reste dans la zone verte
-//         let isduelactive = false; // en combat
-//         let ishooting = false; // verrou
-//         let isrelaxing = false;
-//         let isfocusing = false;
-//         let hasshot = false; //si Klint à tiré, il ne peux plus utiliser le focus ni le realx
+    // Zone distraction (rouge, à gauche)
+    barFond.add([
+        rect(155, 30),
+        pos(0, 0),
+        color(RED),
+        z(2),
+    ]);
 
-//         // Barre de tension
-//         let barfond = add([
-//             rect(500, 20),
-//             pos(50, 50),
-//             color(BLUE),
-//             z(1)
-//         ])
-//         barfond.add([
-//             pos(400, 0),
-//             rect(100, 20),
-//             color(RED),
-//             z(2),
-//         ])
-//         barfond.add([
-//             pos(350, 0),
-//             rect(50, 20),
-//             color(GREEN),
-//             z(2),
-//         ])
+    // Zone normale (verte, milieu)
+    barFond.add([
+        rect(250, 30),
+        pos(145, 0),
+        color(GREEN),
+        z(2),
+    ]);
 
-//         let bar = add([
-//            rect(0, 20),
-//             pos(50, 50),
-//             color(WHITE),
-//             opacity(1),
-//             z(10),
-//         ])
+    // Zone hyperfocus (orange, à droite)
+    barFond.add([
+        rect(165, 30),
+        pos(345, 0),
+        color(RED),
+        z(2),
+    ]);
 
-//         // provoquer le duel
-//         onKeyPress("d", () => {
-//             isduelactive = true;
-//         })
+    // ── Curseur ──
+    const curseur = add([
+        rect(10, 30),
+        pos(50 + (concentration / maxConcentration) * 500, 515),
+        color(WHITE),
+        z(10),
+        anchor("center"),
+        "barreConcentration"
+    ]);
 
-//         // focus
-//         onKeyPress("space", () => { 
-//             isfocusing = true;
-//             isrelaxing = false;
-//         });
-//         onKeyRelease("space", () => { 
-//             isfocusing = false; 
-//             // si on lâche Space mais qu'on tient encore Shift
-//             if (isKeyDown("shift")) isrelaxing = true; 
-//         });
+    // ── Labels ──
+    const labelEtat = add([
+        text("Concentré", { size: 16 }),
+        pos(350, 550),
+        color(WHITE),
+        z(10),
+        "barreConcentration"
+    ]);
 
-//         // relax
-//         onKeyPress("shift", () => { 
-//             isrelaxing = true;
-//             isfocusing = false;
+    // ── Espace = boost de concentration ──
+    onKeyPress("space", () => {
+        if (!actif) return;
+        concentration += 18; // chaque appui monte la barre
+    });
 
-//         });
-//         onKeyRelease("shift", () => { 
-//             isrelaxing = false; 
-//             // si on lâche Shift mais qu'on tient encore Space
-//             if (isKeyDown("space")) isfocusing = true;
-//         });
-//         onKeyPress("enter", () => {
-//             if (isfocusing && !ishooting && !hasshot && tension >=80) {
-//                 ishooting = true;
-//                 hasshot = true;
-//                 klint.play("shooting");
-//             }
-//         });
+    onUpdate(() => {
+        if (!actif) return;
+        // Changer la vitesse de chute aléatoirement toutes les X secondes
+        tempsProchainChangement -= dt();
+        if (tempsProchainChangement <= 0) {
+            vitessChute = rand(1, 30); // vitesse aléatoire entre 5 et 20
+            tempsProchainChangement = rand(1, 3); // change toutes les 1 à 3 secondes
+            console.log("Nouvelle vitesse de chute :", vitessChute.toFixed(1));
+        }
 
-//         onUpdate(() => {
-//             if (!isduelactive) return
+        // La barre descend naturellement
+        concentration -= vitessChute * dt();
 
-//             if (tension >= 70 && tension <= 80) {
-//                 timeingreen += dt()
-//                 console.log(timeingreen)
-//             }
+        // Limites
+        concentration = Math.max(0, Math.min(maxConcentration, concentration));
 
-//             dueltime += dt()
-//             if (dueltime <= 30){
-//                 tension += 1 * dt()
-//             }
-//             else if (dueltime <= 40) {
-//                 tension += 5 * dt()
-//             }
-//             else if (dueltime <= 50) {
-//                 tension += 8.5 * dt()
-//             }
-//             else if (dueltime <= 60) {
-//                 tension += 11 * dt()
-//             }
-//             else {
-//                 tension += 13 * dt()
-//             }
+        // Mise à jour visuelle du curseur
+        curseur.pos.x = 50 + (concentration / maxConcentration) * 500;
 
-//             // déclancheurs d'animations
-//             if (ishooting) {
-//                 isduelactive = false;
-//             }
-//             else if (isfocusing) {
-//                 if (klint.curAnim() !== "focus") klint.play("focus");
-//             } 
-//             else if (isrelaxing) {
-//                 if (klint.curAnim() !== "relax") klint.play("relax");
-//             } 
-//             else {
-//                 if (klint.curAnim() !== "idle") klint.play("idle");
-//             }
+        // Etat du joueur selon la zone
+        if (concentration < ZONE_DISTRACTION) {
+            labelEtat.text = "Distrait...";
+            labelEtat.color = RED;
+        } else if (concentration > ZONE_HYPERFOCUS) {
+            labelEtat.text = "Hyperfocalisé !";
+            labelEtat.color = YELLOW;
+        } else {
+            labelEtat.text = "Concentré";
+            labelEtat.color = GREEN;
+        }
+    });
 
-//             if (timeingreen > 15) {
-//                 isduelactive = false
-//                 console.log("fin du combat")
-//                 klint.play("relax")
-//             }
+    // Retourne une fonction pour arrêter la barre depuis l'extérieur
+    return {
+        stop: () => {
+            actif = false;
+            get("barreConcentration").forEach(o => destroy(o));
+        },
+        getEtat: () => {
+            if (concentration < ZONE_DISTRACTION) return "distrait";
+            if (concentration > ZONE_HYPERFOCUS) return "hyperfocus";
+            return "concentré";
+        }
+    };
+}
 
-//             // Augmenter et diminuer tension
-//             if (isfocusing) {
-//                 tension += 7 * dt() // 40x par sec
-//                 console.log("la tension augmente")
-//             } 
-//             else if (isrelaxing) {
-//                 tension -= 10 * dt()
-//                 console.log("la tension diminue")
-//             }
+barreConcentration();
 
-//             tension = Math.max(0, Math.min(maxtension, tension))
-
-//             // Update barre visuelle
-//             bar.width = (tension / maxtension) * 500
-//         })
-
-//         const level = addLevel([
-//             "6nn5n61nn55",
-//             "00000000000",
-//         ], {
-//             pos: vec2(0, height()/2 + 250),
-//             tileWidth: 50*3,
-//             tileHeight: 51*3,
-
-//             // Définition des syboles : 
-//             tiles: {
-//                 "0": () => [
-//                     sprite("tile0"),
-//                     scale(3),
-//                     anchor("bot"),
-//                     area({shape : new Rect(vec2(), 50, 32)}),
-//                     body({ isStatic: true }),
-//                 ],
-
-//                 "n": () => [
-//                     sprite("tile0.5"),
-//                     scale(3),
-//                     anchor("bot"),
-//                     area({shape : new Rect(vec2(), 50, 32)}),
-//                     body({ isStatic: true }),
-//                 ],
-
-//                 "1": () => [
-//                     sprite("tile1"),
-//                     scale(3),
-//                     anchor("bot"),
-//                     area({shape : new Rect(vec2(), 50, 32)}),
-//                     body({ isStatic: true }),
-//                 ],
-
-//                 "2": () => [
-//                     sprite("tile2"),
-//                     scale(3),
-//                     anchor("bot"),
-//                     area({shape : new Rect(vec2(), 50, 32)}),
-//                     body({ isStatic: true }),
-//                 ],
-
-//                 "3": () => [
-//                     sprite("tile3"),
-//                     scale(3),
-//                     anchor("bot"),
-//                     area({shape : new Rect(vec2(), 50, 32)}),
-//                     body({ isStatic: true }),
-//                 ],
-
-//                 "4": () => [
-//                     sprite("tile4"),
-//                     scale(3),
-//                     anchor("bot"),
-//                     area({shape : new Rect(vec2(), 50, 32)}),
-//                     body({ isStatic: true }),
-//                 ],
-
-//                 "5": () => [
-//                     sprite("tile5"),
-//                     scale(3),
-//                     anchor("bot"),
-//                     area({shape : new Rect(vec2(), 50, 32)}),
-//                     body({ isStatic: true }),
-//                 ],
-
-//                 "6": () => [
-//                     sprite("tile6"),
-//                     scale(3),
-//                     anchor("bot"),
-//                     area({shape : new Rect(vec2(), 50, 32)}),
-//                     body({ isStatic: true }),
-//                 ],
-//             },
-//         });
-//     });
-// }
 
 }

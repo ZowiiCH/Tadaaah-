@@ -81,7 +81,7 @@ let score = 0;
 let scoreFinal = 0
 
 function jpp(){
-    if(scoreFinal <= 2000){
+    if(scoreFinal <= 5000){
         loquace.pop("Ha ! C'est mon arrêt ! ")
 
         const bouton2 = add([
@@ -134,14 +134,18 @@ function créerPensée(){
         pos(rand(0, 700), rand(0, 420)),
         scale(2),
         area(),
+        opacity(1),
     ]); 
 
     const penséeInt = add([
             text(Pensée[NPensée], { size: 16, width: 250 }),
             color(BLACK),
             anchor('topleft'), // si je met anchor center c'est pire...
-        pos(BulleVerte.pos), 
+            pos(BulleVerte.pos), 
+
     ]);
+
+    BulleVerte.fadeIn(1);
 
     NPensée++;
 
@@ -155,7 +159,7 @@ function créerPensée(){
         scoreFinal = score;
         console.log(scoreFinal);
                 etat.retardBus = scoreFinal;
-        wait(1, () => créerPensée()); // prochaine bulle après 1 seconde
+        wait(0.5, () => créerPensée()); // prochaine bulle après 1 seconde
     });
 }
 
