@@ -3,7 +3,7 @@ import * as menu from "/scène/menu.js";
 import * as chambre from "/scène/chambre.js";
 import * as bus from "/scène/bus.js";
 import * as ecole from "/scène/ecole.js";
-//import * as psy from "/scène/psy.js";
+import * as psy from "/scène/psy.js";
 
 
 //__________________________loquace_________________________
@@ -23,13 +23,13 @@ menu.init()
 chambre.init()
 bus.init()
 ecole.init()
-//psy.init()
+psy.init()
 
 loquace.characters({
     m : {
         name : 'menu',
         dialogueType : 'pop',
-        position : 'topright',
+        position : 'center',
         doTween : false,
         dialogText : {
             color : RED
@@ -60,10 +60,10 @@ loquace.characters({
             color : YELLOW
         }
     },
-    P : {
+    p : {
         name : 'PSY',
         dialogueType : 'vn',
-        position : 'botomleft',
+        position : 'topright',
         doTween : false,
         dialogText : {
             color : BLUE
@@ -77,7 +77,7 @@ loquace.characters({
 loadSprite('menu', '/assets/menu.png')
 loadSprite('bus', '/assets/bus.png');
 loadSprite('ecole','/assets/ecole.png') 
-//loadSprite('psy','/photo/buro.png'),
+loadSprite('psy','/assets/buro.png'),
 loadSprite('busPaneau', '/assets/busPaneau.png', {
     sliceX: 1,
     sliceY: 2,
@@ -119,4 +119,4 @@ loadSprite('BVerte', 'assets/bulleVerte.png')
 // souris
 loadSprite('cursor', '/assets/cursor.png')
 
-go('ecole')
+go('psy')

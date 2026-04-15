@@ -12,11 +12,10 @@ function init(){
             sprite('ecole'),
         ]);
 
-        let début = 0
         console.log(etat.retardMaison, etat.retardBus);
 
         if(etat.retardMaison >= 3 && etat.retardBus >=5000){
-            onButtonPress("space",()=> {loquace.next( ), début++, console.log(début)});
+            onButtonPress("space",()=> {loquace.next( )});
             loquace.script([
                 "e Bonjour, j'ai l'habitude que vous soyez en retard, mais aujourd'hui c'est un reccord",
                 "j Bonjour, je suis désolé....",
@@ -27,7 +26,7 @@ function init(){
             ]);
 
         }else if(etat.retardMaison >= 3 && etat.retardBus < 5000 ||etat.retardMaison < 3 && etat.retardBus > 5000){         
-            onButtonPress("space",()=> {loquace.next( ), début++, console.log(début)});
+            onButtonPress("space",()=> {loquace.next( )});
             loquace.script([
                 "e Bonjour ! encore une arrivée tardive, c'est déjà la deuxième.",
                 "j Bonjour, je suis désolé....",
@@ -38,7 +37,7 @@ function init(){
             ]);
 
         }else{
-            onButtonPress("space",()=> {loquace.next( ), début++, console.log(début)});
+            onButtonPress("space",()=> {loquace.next( )});
             loquace.script([
                 "e Bonjour ! Cela fait plaisir de vous voir à l'heure.",
                 "j Bonjour, merci Monsieur ! J'essaie vraiment de faire des efforts.",
@@ -57,8 +56,6 @@ loquace.registerCommand('travail', () => {
     barreConcentration()
 });
 
-let distrait = 0
-let hyperfocal = 0
     
 
 
@@ -157,39 +154,26 @@ function barreConcentration(){
         if (concentration < ZONE_DISTRACTION) {
             labelEtat.text = "Distrait...";
             labelEtat.color = RED;
-            distrait ++;
+            etat.distrait ++;
             actif = false;
             get("barreConcentration").forEach(o => destroy(o))
-            loquace.start(`distrait${distrait}`)
+            loquace.start(`distrait${etat.distrait}`)
             
         } else if (concentration > ZONE_HYPERFOCUS) {
             labelEtat.text = "Hyperfocalisé !";
             labelEtat.color = YELLOW;
-            hyperfocal ++;
+            etat.hyperfocal ++;
             actif = false;
             get("barreConcentration").forEach(o => destroy(o))
-            loquace.start(`hyp${hyperfocal}`)
+            loquace.start(`hyp${etat.hyperfocal}`)
         } else {
             labelEtat.text = "Concentré";
             labelEtat.color = GREEN;
         }
     });
 
-    // Retourne une fonction pour arrêter la barre depuis l'extérieur
-    return {
-        stop: () => {
-            actif = false;
-            get("barreConcentration").forEach(o => destroy(o));
-        },
-        getEtat: () => {
-            if (concentration < ZONE_DISTRACTION) return "distrait";
-            if (concentration > ZONE_HYPERFOCUS) return "hyperfocus";
-            return "concentré";
-        }
-    };
-}
-
-
+loquace.registerCommand('psy', () => {
+go('psy')})
 
         
         loquace.script({
@@ -207,7 +191,10 @@ function barreConcentration(){
             ],
             'distrait3':[
                 "j pff... j'aimerais bien travaillé mais il y'a vraiment trop de bruit aujourd'hui",
-                "e Bon, c'est la troisième fois que je vous vois distraire vous camarades, amenez moi votre carnet"
+                "e Bon, c'est la troisième fois que je vous vois distraire vous camarades, amenez moi votre carnet",
+                "j Cela me fatigue, pourant j'essaie....",
+                "j j'ai rendez-vous avec la psy après l'école, j'espère qu'elle pourra m'aider",
+                "psy"
             ],
             'hyp1':[
                     "e Pour le devoir....",
@@ -215,20 +202,24 @@ function barreConcentration(){
                     "travail"
                 ],
             'hyp2':[
-                "po Hey, tu es à nouveau entrain de faire tramblé toute la table avec ta jambe!",
-                "j excuse-moi, je me rend pas compte quand cela m'arrive....J'étais très concentré",
+                "e Pour la question numéro 2, qui connait la R..",
+                "j Ce sont les Koala ! ",
+                "e Juste, mais vous m'avez coupé la parole et oublié de levez la main, donc je ne vous l'accord pas",
+                "j Mince, des fois j'arrive pas à m'empêcher de parler....",
                 "travail"
             ],
             'hyp3':[
-                "e C'est....",
-                "j .....",
-                "po hey psst! Le prof de te parle !",
+                "po Hey, tu es à nouveau entrain de faire tramblé toute la table avec ta jambe!",
                 "e On n'entend que vous dans la classe, entre le clique du stylo et la jambe qui tremble...",
                 "j Je suis désolé, quand je me concentre, je me rend plus compte de rien des fois...",
-                "e C'est bien de se concentré, mais pas au dépend de déranger le reste de la classe !",
+                "e C'est bien de se concentré, mais pas au dépend de déranger le reste de la classe ! ",
+                "e Amenez moi votre carnet",
+                "j Cela me fatigue d'essayé de bien faire...",
+                "j j'ai rendez-vous avec la psy après l'école, j'espère qu'elle pourra m'aider",
+                "psy"
             ]
         }   );
 
 
 
-}
+}}
