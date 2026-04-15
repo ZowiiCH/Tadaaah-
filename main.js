@@ -3,6 +3,7 @@ import * as menu from "/scène/menu.js";
 import * as chambre from "/scène/chambre.js";
 import * as bus from "/scène/bus.js";
 import * as ecole from "/scène/ecole.js";
+//import * as psy from "/scène/psy.js";
 
 
 //__________________________loquace_________________________
@@ -22,6 +23,7 @@ menu.init()
 chambre.init()
 bus.init()
 ecole.init()
+//psy.init()
 
 loquace.characters({
     m : {
@@ -38,7 +40,7 @@ loquace.characters({
         position : 'topleft',
         doTween : false,
         dialogText : {
-            color : BLUE
+            color : RED
         }},
     e : {
         name : 'enseignant',
@@ -52,7 +54,7 @@ loquace.characters({
     po : {
         name : 'Pote',
         dialogueType : 'vn',
-        position : 'botomleft',
+        position : 'topright',
         doTween : false,
         dialogText : {
             color : YELLOW
@@ -75,6 +77,7 @@ loquace.characters({
 loadSprite('menu', '/assets/menu.png')
 loadSprite('bus', '/assets/bus.png');
 loadSprite('ecole','/assets/ecole.png') 
+//loadSprite('psy','/photo/buro.png'),
 loadSprite('busPaneau', '/assets/busPaneau.png', {
     sliceX: 1,
     sliceY: 2,

@@ -23,11 +23,9 @@ function init(){
                 "e il va me falloir votre agenda, pour un tel retard, c'est malheureusement une heure d'arrêt.",
                 "j Mes parents vont me buté",
                 "e Bien, tout le monde à sa table, nous allons commencé le cours",
+                "travail j appuie sur espace pour rester concontré! "
             ]);
-            wait(10, () => {
-                loquace.pop("appuie sur espace pour rester concentré !")
-                barreConcentration();
-            });
+
         }else if(etat.retardMaison >= 3 && etat.retardBus < 5000 ||etat.retardMaison < 3 && etat.retardBus > 5000){         
             onButtonPress("space",()=> {loquace.next( ), début++, console.log(début)});
             loquace.script([
@@ -36,11 +34,9 @@ function init(){
                 "e C'est le dernier avertissement, la prochaine fois ce sera l'heure d'arrêt.",
                 "j ouf, je l'ai échapé belle, mais je peux plus faire d'erreur....",
                 "e Bien, tout le monde à sa table, nous allons commencé le cours",
+                "travail j appuie sur espace pour rester concontré! "
             ]);
-            wait(10, () => {
-                loquace.pop("appuie sur espace pour rester concentré !")
-                barreConcentration();
-            });
+
         }else{
             onButtonPress("space",()=> {loquace.next( ), début++, console.log(début)});
             loquace.script([
@@ -49,20 +45,25 @@ function init(){
                 "e Oui et cela se voit. Continuez ainsi !",
                 "j J'ai commencé à bien utilisé mon réveil et mon timer, je suis moins souvent en retard.",
                 "e Bien, tout le monde à sa table, nous allons commencé le cours",
+                "j appuie sur la touche 'C' pour rester concontré!",
+                "travail"
             ]);
-            wait(10, () => {
-                loquace.pop("appuie sur espace pour rester concentré !")
-                barreConcentration();
-            });
-        }
 
+        }
 
     })
 
+loquace.registerCommand('travail', () => {
+    barreConcentration()
+});
 
-
-function barreConcentration() {
+let distrait = 0
+let hyperfocal = 0
     
+
+
+function barreConcentration(){
+
     let concentration = 50; // commence au milieu
     let maxConcentration = 100;
     let actif = true;
@@ -72,7 +73,7 @@ function barreConcentration() {
     const ZONE_HYPERFOCUS = 70;    // au dessus = hyperfocalisé
 
     // Vitesse de chute qui varie aléatoirement
-    let vitessChute = 15;
+    let vitessChute = 30;
     let tempsProchainChangement = 0;
 
     // ── Fond de la barre ──
@@ -128,9 +129,9 @@ function barreConcentration() {
     ]);
 
     // ── Espace = boost de concentration ──
-    onKeyPress("space", () => {
+    onKeyPress("c", () => {
         if (!actif) return;
-        concentration += 18; // chaque appui monte la barre
+        concentration += 20; // chaque appui monte la barre
     });
 
     onUpdate(() => {
@@ -138,7 +139,7 @@ function barreConcentration() {
         // Changer la vitesse de chute aléatoirement toutes les X secondes
         tempsProchainChangement -= dt();
         if (tempsProchainChangement <= 0) {
-            vitessChute = rand(1, 30); // vitesse aléatoire entre 5 et 20
+            vitessChute = rand(5, 50); // vitesse aléatoire entre 5 et 20
             tempsProchainChangement = rand(1, 3); // change toutes les 1 à 3 secondes
             console.log("Nouvelle vitesse de chute :", vitessChute.toFixed(1));
         }
@@ -156,9 +157,18 @@ function barreConcentration() {
         if (concentration < ZONE_DISTRACTION) {
             labelEtat.text = "Distrait...";
             labelEtat.color = RED;
+            distrait ++;
+            actif = false;
+            get("barreConcentration").forEach(o => destroy(o))
+            loquace.start(`distrait${distrait}`)
+            
         } else if (concentration > ZONE_HYPERFOCUS) {
             labelEtat.text = "Hyperfocalisé !";
             labelEtat.color = YELLOW;
+            hyperfocal ++;
+            actif = false;
+            get("barreConcentration").forEach(o => destroy(o))
+            loquace.start(`hyp${hyperfocal}`)
         } else {
             labelEtat.text = "Concentré";
             labelEtat.color = GREEN;
@@ -179,7 +189,46 @@ function barreConcentration() {
     };
 }
 
-barreConcentration();
+
+
+        
+        loquace.script({
+            'distrait1':[
+                    "Cui, cui, cui",
+                    "j je me demande qu'elle sorte d'oiseau c'est",
+                    "po mhm?",
+                    "travail"
+            ],
+            'distrait2':[
+                "Hey! Passe moi la balle ! C'est à mon tours de jouer !",
+                "j Hey Jasmine, on jour à la balle au prisionnier après?",
+                "po shuuut, j'essaie de travailler....on regarde à la récré!",
+                    "travail"
+            ],
+            'distrait3':[
+                "j pff... j'aimerais bien travaillé mais il y'a vraiment trop de bruit aujourd'hui",
+                "e Bon, c'est la troisième fois que je vous vois distraire vous camarades, amenez moi votre carnet"
+            ],
+            'hyp1':[
+                    "e Pour le devoir....",
+                    "j Mince, j'ai pas écouté la consigne, j'étais déjà entrain de faire le travail...",
+                    "travail"
+                ],
+            'hyp2':[
+                "po Hey, tu es à nouveau entrain de faire tramblé toute la table avec ta jambe!",
+                "j excuse-moi, je me rend pas compte quand cela m'arrive....J'étais très concentré",
+                "travail"
+            ],
+            'hyp3':[
+                "e C'est....",
+                "j .....",
+                "po hey psst! Le prof de te parle !",
+                "e On n'entend que vous dans la classe, entre le clique du stylo et la jambe qui tremble...",
+                "j Je suis désolé, quand je me concentre, je me rend plus compte de rien des fois...",
+                "e C'est bien de se concentré, mais pas au dépend de déranger le reste de la classe !",
+            ]
+        }   );
+
 
 
 }
