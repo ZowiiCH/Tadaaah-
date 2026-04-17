@@ -7,6 +7,8 @@ import * as psy from "/scène/psy.js";
 import * as chambre2 from "/scène/chambre2.js";
 import * as bus2 from "/scène/bus2.js";
 import * as ecole2 from "/scène/ecole2.js";
+import * as psy2 from "/scène/psy2.js";
+import * as fin from "/scène/fin.js";
 
 //__________________________loquace_________________________
 import { loquacePlugin , clear } from "/loquace.js";
@@ -29,6 +31,8 @@ psy.init()
 chambre2.init()
 bus2.init()
 ecole2.init()
+psy2.init()
+fin.init()
 
 loquace.characters({
     m : {
@@ -117,4 +121,4 @@ loadSprite('BVerte', 'assets/bulleVerte.png')
 // souris
 loadSprite('cursor', '/assets/cursor.png')
 
-go('ecole2')
+go('fin')

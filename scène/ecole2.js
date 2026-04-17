@@ -33,22 +33,21 @@ loquace.registerCommand('travail', () => {
     barreConcentration()
 });
 
-    
-
 
 function barreConcentration(){
 
     let concentration = 50; // commence au milieu
     let maxConcentration = 100;
     let actif = true;
+    let difficulté = 0;
+    let tombe = -20
 
     // Zones
     const ZONE_HYPERFOCUS = 95;    // au dessus = hyperfocalisé
 
-    // Vitesse de chute qui varie aléatoirement
-    let vitessChute = -30;
+    // Vitesse de chute
+    let vitessChute = -40;
   
-
     // ── Fond de la barre ──
     const barFond = add([
         rect(500, 30),
@@ -96,7 +95,8 @@ function barreConcentration(){
     // ── Espace = boost de concentration ──
     onKeyPress("c", () => {
         if (!actif) return;
-        concentration -= 20; // chaque appui monte la barre
+        difficulté -= -15;
+        concentration = tombe + difficulté; // chaque appui monte la barre
     });
 
     onUpdate(() => {
