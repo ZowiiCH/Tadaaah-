@@ -16,9 +16,9 @@ function init(){
 
     onButtonPress("space",()=> {loquace.next( ), début++, console.log(début)});
         loquace.script([
-            "j Il faut que je me dépèche de partir à l'école.",
-            "j Si je prends trop de temps, je vais raté le bus ",
-            "j Est ce que j'ai pris mes devoirs ?",
+            "j C'est l'heure ! Il faut que je parte prendre le bus pour l'école.",
+            "j Il faut que je me dépèche j'ai déjà eu des arrivées tardives.",
+            "j Je ne me souviens plus ou j'ai rangé mes devoirs. Si je prends trop de temps à les trouver, je vais raté le bus!",
         ]);
 
     ////////////////////////////////SAC//////////////////////
@@ -107,27 +107,14 @@ sac.onClick(() => {if(début >= 3){
             etat.retardMaison += 1,
             console.log(etat.retardMaison)
             devoir.play("trouvé")
-            loquace.pop("Yeah! J'avais oublié que j'avais ''rangé'' mon bureau hier")
+            loquace.script(["Yeah! J'avais oublié que j'avais ''rangé'' mon bureau hier",
+                "Vite, faut que j'ai prendre le bus !",
+                "bus"
+            ])
+loquace.registerCommand('bus', () => {
+go('bus')})
 
-
-        const bouton2 = add([
-            rect(440,100),
-            pos(width()/2, height()/2 ),
-            anchor('center'),
-            color(RED),
-                scale(0.5),
-            area(),
-        ]);
-
-        bouton2.add([
-            text('aller prendre le bus'),
-            pos(0, 0),
-            anchor('center'),
-        ]);
-
-        bouton2.onClick(() => {
-            go('bus');
-        });}
+        }
         })
         });
     ////////////////////////curseur///////////////////

@@ -22,7 +22,8 @@ function init(){
                 "e il va me falloir votre agenda, pour un tel retard, c'est malheureusement une heure d'arrêt.",
                 "j Mes parents vont me buté",
                 "e Bien, tout le monde à sa table, nous allons commencé le cours",
-                "travail j appuie sur espace pour rester concontré! "
+                "m appuie sur espace pour rester concontré! ",
+                "travail"
             ]);
 
         }else if(etat.retardMaison >= 3 && etat.retardBus < 5000 ||etat.retardMaison < 3 && etat.retardBus > 5000){         
@@ -33,7 +34,8 @@ function init(){
                 "e C'est le dernier avertissement, la prochaine fois ce sera l'heure d'arrêt.",
                 "j ouf, je l'ai échapé belle, mais je peux plus faire d'erreur....",
                 "e Bien, tout le monde à sa table, nous allons commencé le cours",
-                "travail j appuie sur espace pour rester concontré! "
+                "m appuie sur espace pour rester concontré! ",
+                "travail"
             ]);
 
         }else{
@@ -44,7 +46,7 @@ function init(){
                 "e Oui et cela se voit. Continuez ainsi !",
                 "j J'ai commencé à bien utilisé mon réveil et mon timer, je suis moins souvent en retard.",
                 "e Bien, tout le monde à sa table, nous allons commencé le cours",
-                "j appuie sur la touche 'C' pour rester concontré!",
+                "m appuie sur la touche 'C' pour rester concontré!",
                 "travail"
             ]);
 
@@ -152,15 +154,12 @@ function barreConcentration(){
 
         // Etat du joueur selon la zone
         if (concentration < ZONE_DISTRACTION) {
-            labelEtat.text = "Distrait...";
             labelEtat.color = RED;
             etat.distrait ++;
             actif = false;
             get("barreConcentration").forEach(o => destroy(o))
-            loquace.start(`distrait${etat.distrait}`)
-            
+            loquace.start(`distrait${etat.distrait}`)          
         } else if (concentration > ZONE_HYPERFOCUS) {
-            labelEtat.text = "Hyperfocalisé !";
             labelEtat.color = YELLOW;
             etat.hyperfocal ++;
             actif = false;

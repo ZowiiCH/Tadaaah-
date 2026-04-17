@@ -11,10 +11,11 @@ function init() {
     let début = 0
     onButtonPress("space", () =>{loquace.next(), début ++, console.log(début)});
    
-        const bouton = add([
+            const bouton = add([
             rect(350,90),
-            pos(350,420),
-            color(White),
+            pos(width()/2, height()/2 - 100),
+            pos(305,420),
+            opacity(0),
             area(),
         ]);
     

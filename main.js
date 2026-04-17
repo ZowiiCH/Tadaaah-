@@ -4,7 +4,9 @@ import * as chambre from "/scène/chambre.js";
 import * as bus from "/scène/bus.js";
 import * as ecole from "/scène/ecole.js";
 import * as psy from "/scène/psy.js";
-
+import * as chambre2 from "/scène/chambre2.js";
+import * as bus2 from "/scène/bus2.js";
+import * as ecole2 from "/scène/ecole2.js";
 
 //__________________________loquace_________________________
 import { loquacePlugin , clear } from "/loquace.js";
@@ -24,6 +26,9 @@ chambre.init()
 bus.init()
 ecole.init()
 psy.init()
+chambre2.init()
+bus2.init()
+ecole2.init()
 
 loquace.characters({
     m : {
@@ -78,13 +83,6 @@ loadSprite('menu', '/assets/menu.png')
 loadSprite('bus', '/assets/bus.png');
 loadSprite('ecole','/assets/ecole.png') 
 loadSprite('psy','/assets/buro.png'),
-loadSprite('busPaneau', '/assets/busPaneau.png', {
-    sliceX: 1,
-    sliceY: 2,
-    anims:{
-           "cligno": { from: 0, to: 1, loop: true },
-        } 
-});
 loadSprite('chambre','/assets/chambre.png')
 loadSprite('sac', '/assets/sac.png', {
     sliceX: 1,
@@ -119,4 +117,4 @@ loadSprite('BVerte', 'assets/bulleVerte.png')
 // souris
 loadSprite('cursor', '/assets/cursor.png')
 
-go('psy')
+go('ecole2')

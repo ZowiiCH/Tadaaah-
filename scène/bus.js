@@ -11,53 +11,39 @@ function init() {
         sprite('bus'),
     ]);
 
-    onButtonPress("space",()=> {loquace.clear()})
-
-if(etat.retardMaison < 2){
-    loquace.pop("Pour une fois, j'ai pas eu besoin de courir pour prendre le bus !")
-}else if(etat.retardMaison == 2){
-    loquace.pop("Ouf j'ai failli raté le bus!")
-}else if(etat.retardMaison > 2){
-loquace.pop("aie aie aie, j'ai du prendre le bus d'après. Je vais être en retard....")
-} 
-
-
-/////////////////////Paneau/////////////////////////
-    const paneauBus = add([
-        sprite('busPaneau', {
-            frame: 1}),
-        pos(375,25),
-        area(),
-        scale(1),
-        "cligno"
-
-    ]);
-
-    paneauBus.onHover(() =>{
-        paneauBus.play("cligno")
-            loquace.vn("panneau de bus")
-
+    loquace.registerCommand('jeu', () => {
+        créerPensée()
     });
 
-    paneauBus.onHoverEnd(() =>{
-        paneauBus.stop()
-        paneauBus.frame = 1
-        loquace.clear()
-    });
+loquace.registerCommand('goecole', () => {
+    go('ecole')});
 
-    paneauBus.onClick(()=>{
-        loquace.clear()
-        loquace.pop("C'est bon j'ai le temps avant mon arrêt")  
-        loquace.vn("clique sur les pensées intrusives pour les faire disparaître")
-        console.log(etat.retardBus)
-        paneauBus.destroy()
+    onButtonPress("space",()=> {loquace.next()})
+  
+    if(etat.retardMaison < 2){
+        loquace.script(["j Pour une fois, j'ai pas eu besoin de courir pour prendre le bus !",
+                        "j C'est bon j'ai le temps avant mon arrêt",
+                        "j mais il ne faut pas que je me fasse distraire !",
+                        "m clique sur les pensées intrusive pour les faire disparaitre !",
+                        "jeu"
+        ])
+    }else if(etat.retardMaison == 2){
+        loquace.script(["j Ouf j'ai failli raté le bus!",
+                        "j C'est bon j'ai le temps avant mon arrêt",
+                        "j mais il ne faut pas que je me fasse distraire !",
+                        "m clique sur les pensées intrusive pour les faire disparaitre !",
+                        "jeu"
+        ])
+    }else if(etat.retardMaison > 2){
+    loquace.script(["j aie aie aie, j'ai du prendre le bus d'après. Je vais être en retard....",
+                    "j C'est bon j'ai le temps avant mon arrêt",
+                    "j mais il ne faut pas que je me fasse distraire !",
+                    "m clique sur les pensées intrusive pour les faire disparaitre !",
+                    "jeu"
+    ])
+    } 
 
-        wait(5, () => {
-            loquace.clear(),
-            créerPensée()
-        });
 
-    })
 
 //////////////////////////Bulle///////////////////
 
@@ -81,27 +67,12 @@ let score = 0;
 let scoreFinal = 0
 
 function jpp(){
+
+
     if(scoreFinal <= 5000){
-        loquace.pop("Ha ! C'est mon arrêt ! ")
-
-        const bouton2 = add([
-            rect(440,100),
-            pos(width()/2, height()/2 ),
-            anchor('center'),
-            color(RED),
-                scale(0.5),
-            area(),
-        ]);
-
-        bouton2.add([
-            text("aller à l'école"),
-            pos(0, 0),
-            anchor('center'),
-        ]);
-
-        bouton2.onClick(() => {
-            go('ecole');
-        })
+        loquace.script(["Ha ! C'est mon arrêt !",
+                "goecole"
+        ])
 
     }else{
 
@@ -165,35 +136,18 @@ function créerPensée(){
 
 
 
-// const Bulleleu = add([
-//     sprite('bubble',  {
-//     frame: 2}),
-//     pos(rand(0, 700), rand(0, 420)),
-//     scale(0.8),
-//     area(),
-// ])
-
-// const Bullerose = add([
-//     sprite('bubble',  {
-//     frame: 3}
-//     ),
-//     pos(500,300),
-//     area(),
-// ])
-
-
 ////////////////////////curseur///////////////////
-    const cursor = add([
-        sprite("cursor"), // sprite
-        pos(455,300),
-        area(),
-        "clickable"   
-    ]);
+const cursor = add([
+    sprite("cursor"), // sprite
+    pos(455,300),
+    area(),
+    "clickable"   
+]);
 
-    onUpdate(() => {
-        // cursor() renvoie la position du curseur dans l'espace du jeu
-        cursor.pos = mousePos();
-    });
+onUpdate(() => {
 
-    })
+    cursor.pos = mousePos();
+});
+
+})
 }

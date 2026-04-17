@@ -1,0 +1,101 @@
+import { etat } from "/scène/retard.js";
+
+export{
+    init
+}
+
+function init() {
+    scene('bus2', () => {
+
+    add([
+        sprite('bus'),
+    ]);
+
+    loquace.registerCommand('jeu', () => {
+        créerPensée()
+    });
+
+    loquace.registerCommand('ecole2', () => {
+    go('ecole2')});
+
+    onButtonPress("space",()=> {loquace.next()})
+
+    loquace.script(["j Je n'ai pratiquement plus raté le bus depuis un mois",
+                    "j J'ai moins peur qu'avant d'être en retard maintenant",
+                    "m clique sur les pensées intrusive pour les faire disparaitre !",
+                    "jeu"       
+    ])
+
+
+
+//////////////////////////Bulle///////////////////
+
+let Pensée = ["C'est vrai que je perd moins mes affaires",
+    "Jasmine m'a dit que je faisais moins de bruit en classe.",
+    "Mais, elle m'a aussi dit que je faisais moins de blagues...",
+    "ha, il me reste trois arrêts",
+    "Lucas m'a aussi dit que les histoires que j'inventais lui manques",
+    "C'est vrai que j'ai moins d'idée qui me viennent en tête",
+    "c'est plus silencieux, mais plus ennuyant aussi....",
+];
+
+
+
+
+let NPensée = 0
+
+
+
+function créerPensée(){
+    if(NPensée >= Pensée.length){return loquace.script([
+        "j C'est mon arrêt!",
+        "j Yes! Encore un jour sans arrivée tardive ! ",
+        "ecole2"
+]) }
+
+    const BulleVerte = add([
+        sprite('BVerte'),
+        pos(rand(0, 700), rand(0, 420)),
+        scale(2),
+        area(),
+        opacity(1),
+    ]); 
+
+    const penséeInt = add([
+            text(Pensée[NPensée], { size: 16, width: 250 }),
+            color(BLACK),
+            anchor('topleft'), // si je met anchor center c'est pire...
+            pos(BulleVerte.pos), 
+
+    ]);
+
+    BulleVerte.fadeIn(1);
+
+    NPensée++;
+
+
+    BulleVerte.onClick(() => {
+        destroy(BulleVerte);
+        destroy(penséeInt);
+
+        wait(0.5, () => créerPensée()); // prochaine bulle après 1 seconde
+    });
+}
+
+
+
+////////////////////////curseur///////////////////
+    const cursor = add([
+        sprite("cursor"), // sprite
+        pos(455,300),
+        area(),
+        "clickable"   
+    ]);
+
+    onUpdate(() => {
+        // cursor() renvoie la position du curseur dans l'espace du jeu
+        cursor.pos = mousePos();
+    });
+
+    })
+}
