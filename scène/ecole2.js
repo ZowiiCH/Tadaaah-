@@ -23,18 +23,18 @@ function init(){
         "j Oui, c'est vrai, je sais pas trop pourquoi Monsieur, mais je vous écoutes. Promis !",
         "e Je n'ai pas de doute la dessus. Vous avez souvent de bonne idée, il faut osez les dire",
         "e Allez c'est l'heure, le cours commence.",
-        "travail"
+        "travail2"
     ]);
 
 
     })
 
-loquace.registerCommand('travail', () => {
-    barreConcentration()
+loquace.registerCommand('travail2', () => {
+    barreConcentration2()
 });
 
 
-function barreConcentration(){
+function barreConcentration2(){
 
     let concentration = 50; // commence au milieu
     let maxConcentration = 100;
@@ -124,7 +124,7 @@ function barreConcentration(){
         }
     });
 
-loquace.registerCommand('psy', () => {
+loquace.registerCommand('psy2', () => {
 go('psy2')})
 
         
@@ -133,12 +133,12 @@ go('psy2')})
                     "po C'est cool que tu te fasse moins grondé",
                     "po mais, on rigole beaucoup moins à l'école depuis que tu fais moins de blagues",
                     "j Oui, je sais je trouve aussi que je rigole moins...",
-                    "travail"
+                    "travail2"
                 ],
             'hyp2':[
                 "po Tiens ça t'arrives encores des fois des te balcer sur ta chaise !",
                 "j Oui, ça m'arrive encore de ne plus me rendre compte de ce qui se passe...",
-                "travail"
+                "travail2"
             ],
             'hyp3':[
                 "e Cela fait trois fois que je vous apelle.",
@@ -147,7 +147,7 @@ go('psy2')})
                 "e le cours est fini, vous pouvez me rendre ce que vous avez fait.",
                 "j Oups, je n'ai pas vu l'heure, faudra quand j'en parle à mon rendez-vous pour parler du médicament.",
                 "j On va faire le point aujourd'hui !",
-                "psy"
+                "psy2"
             ]
         }   );
 

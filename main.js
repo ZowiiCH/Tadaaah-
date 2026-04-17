@@ -121,4 +121,4 @@ loadSprite('BVerte', 'assets/bulleVerte.png')
 // souris
 loadSprite('cursor', '/assets/cursor.png')
 
-go('fin')
+go('chambre2') 
