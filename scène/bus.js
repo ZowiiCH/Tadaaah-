@@ -80,13 +80,14 @@ function jpp(){
         sprite('bubble', {
             frame :0 }
         ),
-        pos(200,180),
+        anchor('center'),
+        pos(450,280),
         area(),
     ])
        const auSecour = add([
-            text("HO NON J'AI RATE MON ARRET"),
+            text(["HO NON J'AI RATE MON ARRET"],{ size: 24, width: 200 }),
             color(BLACK),
-            anchor('topleft'), // si je met anchor center c'est pire...
+            anchor('center'), // si je met anchor center c'est pire...
             pos(BulleRouge.pos), 
          ])
 
@@ -102,17 +103,20 @@ function créerPensée(){
 
     const BulleVerte = add([
         sprite('BVerte'),
-        pos(rand(0, 700), rand(0, 420)),
+        pos(rand(150, 700), rand(80, 420)),
+        anchor("center"),
         scale(2),
         area(),
         opacity(1),
     ]); 
 
     const penséeInt = add([
-            text(Pensée[NPensée], { size: 16, width: 250 }),
+            text(Pensée[NPensée], { size: 16, width: 200 }),
             color(BLACK),
-            anchor('topleft'), // si je met anchor center c'est pire...
-            pos(BulleVerte.pos), 
+            anchor("center"), // si je met anchor center c'est pire...
+            pos(
+                BulleVerte.pos
+            ), 
 
     ]);
 

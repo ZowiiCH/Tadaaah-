@@ -20,23 +20,9 @@ Il faut que je trouve mes devoirs !
 - couette
 
 
-BUS 
-
-Mettre les textes bien des les bulles
-Comprendre pk le chiffre de scord varie autant ??
-
-ECOLE
-
-Faire la barre de concenration 
-si trop distrait : remarque de l'enseignant, 
-si trop hyperfocus : pareil ? Ou remarque des copains ?
-
-PSY 
-Faire dialogue et vulgarisation des symptômes. 
-
-=> UN MOI PLUS TARD
-
-Refaire les scènes dessiner différament, les jeux en plus simple. 
-
--> mettre en lumière les avantages et incomvéniants du traitement au travers
-des interactions avec les parents/enseignants/copains. 
+Checker école 2 -> pk ca marche pas comme il faut. 
+Simplifier les scripts, plus cours, plus punchy. 
+-> finissions aussi des bulles de penséeInt
+Finir le readme
+rendre tout le code tout beau tout propre 
+trouvez de la musique !!

@@ -11,9 +11,9 @@ function init(){
             sprite('psy'),
         ]);
 
-        // onButtonPress("space",()=> {loquace.next( )});
-        // loquace.script([
-        // "p Bonjour, comment ça va depuis la semaine dernière?",
+        onButtonPress("space",()=> {loquace.next( )});
+        loquace.script([
+        "p Bonjour, comment ça va depuis la semaine dernière?",
         // "j ça va, mais j'ai encore eu une remarque dans mon agenda...",
         // "p ho, je suis désolé de l'entendre. Je pense que la session d'aujourd'hui pourra t'aider",
         // "p tu te souviens, la semaine passé, nous avons fait un long questionnaire",
@@ -27,60 +27,138 @@ function init(){
         // "p Le TDAH se divise en deux catégories, tu à le trouble de l'attention",
         // "p L'attetion c'est ta capacité à te concentrer sur quelque chose",
         // "p et tu à l'hyperactivité, c'est le fait d'avoir parfois trop d'énergie",
-        // ]);
+        "m Clique sur le bouton correspondant au trouble du symptome!",
+        "jeu"
+        ]);
 
 
-function AH(){
+    loquace.registerCommand('jeu', () => {
+    jeuSymptome()})
 
-            const boutonA = add([
-                rect(250,90),
-                pos(150,400),
-                color(GREEN),
-                area(),
-             ]);
 
-            const boutonH = add([
-                rect(250,90),
-                pos(500,400),
-                color(BLUE),
-                area(),
-             ]);
-    
- }
-AH()
     });
- function jeuSymptome(){
-    let symtpome = 0 
-              loquace.start(`sympt${symtpome}`)
-  loquace.script({
+
+
+
+function jeuSymptome(){
+
+    const correct = ["a", "h", "a", "h", "a", "h"];
+
+    let réponse = ""
+    let symtpome = 0
+    let enAttenteReponse = true; 
+
+    loquace.registerCommand('concerta', () => {
+        go('chambre2')
+    });
+
+    loquace.registerCommand('suite', () => {
+        enAttenteReponse = true;
+        if(symtpome < correct.length){
+            loquace.start(`sympt${symtpome}`);
+        } else {
+            destroy(boutonA),
+            destroy(boutonH),
+            loquace.script(["m Bravo, tu as fini le quizz !",
+                "p Comme tu peux le voir, les symtômes sont très divers.",
+                "p D'après les résultats de la semaine dernière, tu es effectivement TDAH",
+                "p ce que nous allons faire maintenant, c'est testé un traitement",
+                "p nous nous revoyons dans un mois pour faire le points!",
+                "concerta"
+            ]);
+        }
+    })
+
+    loquace.script({
             'sympt0':[
-                "m Clique sur la flèche gauche si tu penses que c'est un syptome d'attention, ou celle de droite si c'est de l'hyperactivité!"
-            ],
-            'sympt1':[
                 "m se perdre dans ses pensées."
             ],
-            'sympt1A':[
-                "yes c'est juste"
-            ],
-            'sympt1H':[
-                "nope, nope"
-            ],
-            'sympt2':[
+            'sympt1':[
                 "m avoir besoin de toujours bouger, se tortiller"
             ],
-            'sympt3':[
+            'sympt2':[
                 "m perdre régulièrement ces affaires."
             ],
-            'sympt4':[
+            'sympt3':[
                 "m coupez la parole aux autres."
                 ],
-            'sympt5':[
+            'sympt4':[
                 "m se faire distraire par ce qui nous entour."
             ],
-            'sympt6':[
+            'sympt5':[
                 "m parlez souvent trop"
             ]
         }   );
- }   
 
+    loquace.start(`sympt${symtpome}`)
+
+// Bouton attention_____________________________________
+    const boutonA = add([
+        rect(280,90),
+        pos(250,450),
+        color(GREEN),
+        anchor('center'),
+        area(),
+    ]);
+
+    boutonA.add([
+        text('Attention'),
+        pos(0,0),  
+        anchor('center')
+    ])  
+
+    boutonA.onClick(() => {
+        console.log("a")
+        if(!enAttenteReponse) return;
+        enAttenteReponse = false;
+
+        const bonneReponse = correct[symtpome];
+        symtpome++
+
+        if("a" === bonneReponse){
+            loquace.script(["m Bravo, c'est correct !",
+                "suite"
+            ])
+        }else{
+            loquace.script(["m Oups, c'est un symptome d'hyperactivité",
+                "suite"
+            ])
+        }
+    })
+
+    // bouton hyperactivité______________
+    const boutonH = add([
+        rect(280,90),
+        pos(600,450),
+        anchor('center'),
+        color(BLUE),
+        area(),
+    ]);
+
+    boutonH.add([
+        text('Hyperactivité'),
+        pos(0,0),  
+        anchor('center')
+    ])  
+
+    boutonH.onClick(() => {
+        if(!enAttenteReponse) return;
+        enAttenteReponse = false;
+
+        const bonneReponse = correct[symtpome];
+        symtpome++
+
+        if("h" === bonneReponse){
+            loquace.script(["m Bravo, c'est correct !",
+                "suite"
+            ])
+        }else{
+            loquace.script(["m Oups, c'est un symptome d'attention",
+                "suite"
+            ])
+        }
+    })
+            
 }
+}
+

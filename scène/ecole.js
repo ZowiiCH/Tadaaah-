@@ -154,13 +154,11 @@ function barreConcentration(){
 
         // Etat du joueur selon la zone
         if (concentration < ZONE_DISTRACTION) {
-            labelEtat.color = RED;
             etat.distrait ++;
             actif = false;
             get("barreConcentration").forEach(o => destroy(o))
             loquace.start(`distrait${etat.distrait}`)          
         } else if (concentration > ZONE_HYPERFOCUS) {
-            labelEtat.color = YELLOW;
             etat.hyperfocal ++;
             actif = false;
             get("barreConcentration").forEach(o => destroy(o))

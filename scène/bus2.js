@@ -55,16 +55,17 @@ function créerPensée(){
 
     const BulleVerte = add([
         sprite('BVerte'),
-        pos(rand(0, 700), rand(0, 420)),
+        pos(rand(150, 700), rand(80, 420)),
+        anchor("center"),
         scale(2),
         area(),
         opacity(1),
     ]); 
 
     const penséeInt = add([
-            text(Pensée[NPensée], { size: 16, width: 250 }),
+            text(Pensée[NPensée], { size: 16, width: 200 }),
             color(BLACK),
-            anchor('topleft'), // si je met anchor center c'est pire...
+            anchor('center'), // si je met anchor center c'est pire...
             pos(BulleVerte.pos), 
 
     ]);
