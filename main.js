@@ -112,13 +112,38 @@ loadSprite('devoir', '/assets/devoir.png', {
         }
      } 
 )
+loadSprite('feuille', '/assets/feuille.png', {
+    sliceX: 1,
+    sliceY: 2,
+    anims:{
+            "cligno": { from: 0, to: 1, loop: true } 
+            } 
+})
+loadSprite('jean', '/assets/jean.png', {
+    sliceX: 1,
+    sliceY: 2,
+    anims:{
+            "cligno": { from: 0, to: 1, loop: true } 
+            } 
+})
+loadSprite('oreiller', '/assets/oreiller.png', {
+    sliceX: 1,
+    sliceY: 2,
+    anims:{
+            "cligno": { from: 0, to: 1, loop: true } 
+            } 
+})
+loadSprite('pull', '/assets/pull.png', {
+    sliceX: 1,
+    sliceY: 2,
+    anims:{
+            "cligno": { from: 0, to: 1, loop: true } 
+            } 
+})
 loadSprite('bubble', '/assets/bubble.png',{
     sliceX: 2,
     sliceY: 2,
 })
 loadSprite('BVerte', 'assets/bulleVerte.png')
 
-// souris
-loadSprite('cursor', '/assets/cursor.png')
-
-go('menu') 
+go('psy') 

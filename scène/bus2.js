@@ -82,21 +82,5 @@ function créerPensée(){
         wait(0.5, () => créerPensée()); // prochaine bulle après 1 seconde
     });
 }
-
-
-
-////////////////////////curseur///////////////////
-    const cursor = add([
-        sprite("cursor"), // sprite
-        pos(455,300),
-        area(),
-        "clickable"   
-    ]);
-
-    onUpdate(() => {
-        // cursor() renvoie la position du curseur dans l'espace du jeu
-        cursor.pos = mousePos();
-    });
-
-    })
+})
 }

@@ -58,19 +58,6 @@ function init(){
 loquace.registerCommand('bus2', () => {
 go('bus2')})
 
-////////////////////////curseur///////////////////
-    const cursor = add([
-        sprite("cursor"), // sprite
-        pos(455,300),
-        area(),
-        "clickable"   
-    ]);
-
-    onUpdate(() => {
-        // cursor() renvoie la position du curseur dans l'espace du jeu
-        cursor.pos = mousePos();
-    });
-
 })
 }
 

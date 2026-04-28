@@ -20,21 +20,21 @@ loquace.registerCommand('goecole', () => {
 
     onButtonPress("space",()=> {loquace.next()})
   
-    if(etat.retardMaison < 2){
+    if(etat.retardMaison < 3){
         loquace.script(["j Pour une fois, j'ai pas eu besoin de courir pour prendre le bus !",
                         "j C'est bon j'ai le temps avant mon arrêt",
                         "j mais il ne faut pas que je me fasse distraire !",
                         "m clique sur les pensées intrusive pour les faire disparaitre !",
                         "jeu"
         ])
-    }else if(etat.retardMaison == 2){
+    }else if(etat.retardMaison == 3){
         loquace.script(["j Ouf j'ai failli raté le bus!",
                         "j C'est bon j'ai le temps avant mon arrêt",
                         "j mais il ne faut pas que je me fasse distraire !",
                         "m clique sur les pensées intrusive pour les faire disparaitre !",
                         "jeu"
         ])
-    }else if(etat.retardMaison > 2){
+    }else if(etat.retardMaison > 3){
     loquace.script(["j aie aie aie, j'ai du prendre le bus d'après. Je vais être en retard....",
                     "j C'est bon j'ai le temps avant mon arrêt",
                     "j mais il ne faut pas que je me fasse distraire !",
@@ -137,21 +137,6 @@ function créerPensée(){
         wait(0.5, () => créerPensée()); // prochaine bulle après 1 seconde
     });
 }
-
-
-
-////////////////////////curseur///////////////////
-const cursor = add([
-    sprite("cursor"), // sprite
-    pos(455,300),
-    area(),
-    "clickable"   
-]);
-
-onUpdate(() => {
-
-    cursor.pos = mousePos();
-});
 
 })
 }
