@@ -85,10 +85,19 @@ loquace.characters({
 //_________________________ SPRITES___________________________
 loadSprite('menu', '/assets/menu.png')
 loadSprite('bus', '/assets/bus.png');
+loadSprite('bus2', '/assets/bus2.png');
 loadSprite('ecole','/assets/ecole.png') 
 loadSprite('psy','/assets/buro.png'),
 loadSprite('chambre','/assets/chambre.png')
+loadSprite('chambre2','/assets/chambre2.png')
 loadSprite('sac', '/assets/sac.png', {
+    sliceX: 1,
+    sliceY: 2,
+    anims:{
+            "cligno": { from: 0, to: 1, loop: true } 
+            } 
+})
+loadSprite('sac2', '/assets/sac2.png', {
     sliceX: 1,
     sliceY: 2,
     anims:{
@@ -104,6 +113,15 @@ loadSprite('box', '/assets/box.png', {
      } 
 )
 loadSprite('devoir', '/assets/devoir.png', {
+    sliceX: 2,
+    sliceY: 2,
+    anims:{
+        "cligno": { from: 0, to: 1, loop: true },
+        "trouvé" : { from : 2, to:3, loop: true}
+        }
+     } 
+)
+loadSprite('devoir2', '/assets/devoir2.png', {
     sliceX: 2,
     sliceY: 2,
     anims:{
@@ -146,4 +164,4 @@ loadSprite('bubble', '/assets/bubble.png',{
 })
 loadSprite('BVerte', 'assets/bulleVerte.png')
 
-go('psy') 
+go('bus2') 

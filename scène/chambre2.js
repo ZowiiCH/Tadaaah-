@@ -9,7 +9,7 @@ function init(){
         scene('chambre2', () => {
 
         add([
-            sprite('chambre'),
+            sprite('chambre2'),
         ]);
     
     let début = 0
@@ -26,10 +26,11 @@ function init(){
             "j Je vais vite chercher mes affaires !"
         ]);
 
+        //////////////sac///////////////////////
     const sac = add([
-                sprite('sac', {
+                sprite('sac2', {
                     frame: 1}),
-                pos(185,220),
+                pos(65,300),
                 area(),
                 "cligno"   
             ]);
@@ -47,17 +48,47 @@ function init(){
 
     sac.onClick(() => {if(début >= 8){
         sac.destroy();
-        loquace.script(["C'est bon, j'ai déjà tout dans mon sac!",
-            "je peux directement aller prendre le bus",
-            "bus2"
+        loquace.script(["Oups, je les ai pas mis dans mon sac.",
+           
         ]
 
         );}
     });
 
-loquace.registerCommand('bus2', () => {
-go('bus2')})
+/////////////////////////DEvoir////////
+    const devoir = add([
+        sprite('devoir2',  {
+        frame: 1}
+        ),
+        scale(0.8),
+        pos(250,70),
+        area(),
+        "cligno"
+    ]);
 
-})
+    devoir.onHover(() =>{if(début >= 8){
+        devoir.play("cligno")
+        loquace.vn('feuille')
+        }
+    });
+
+    devoir.onHoverEnd(() =>{    
+        devoir.stop()
+        devoir.frame = 1
+        //  loquace.clear() <= fait disparaitre les bulles de dialogues aussi....
+    });
+
+    devoir.onClick(()=>{if(début >= 8){
+        destroy(sac)
+        devoir.play("trouvé")
+        loquace.script(["Facile à trouver quand c'est rangé",
+                "bus2",
+        ]);
+
+    loquace.registerCommand('bus2', () => {
+        go('bus2')
+    });
+
+    }}
+)})
 }
-

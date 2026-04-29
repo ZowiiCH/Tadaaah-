@@ -8,7 +8,7 @@ function init() {
     scene('bus2', () => {
 
     add([
-        sprite('bus'),
+        sprite('bus2'),
     ]);
 
     loquace.registerCommand('jeu', () => {
