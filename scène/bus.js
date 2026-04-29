@@ -21,24 +21,21 @@ loquace.registerCommand('goecole', () => {
     onButtonPress("space",()=> {loquace.next()})
   
     if(etat.retardMaison < 3){
-        loquace.script(["j Pour une fois, j'ai pas eu besoin de courir pour prendre le bus !",
-                        "j C'est bon j'ai le temps avant mon arrêt",
-                        "j mais il ne faut pas que je me fasse distraire !",
-                        "m clique sur les pensées intrusive pour les faire disparaitre !",
+        loquace.script(["j Même pas eu besoin de courir pour prendre le bus !",
+                        "j J'ai le temps avant mon arrêt",
+                        "m Clique sur les pensées intrusives pour les faire disparaitre !",
                         "jeu"
         ])
     }else if(etat.retardMaison == 3){
-        loquace.script(["j Ouf j'ai failli raté le bus!",
+        loquace.script(["j J'ai du courir pour attraper le bus!",
                         "j C'est bon j'ai le temps avant mon arrêt",
-                        "j mais il ne faut pas que je me fasse distraire !",
-                        "m clique sur les pensées intrusive pour les faire disparaitre !",
+                        "m Clique sur les pensées intrusive pour les faire disparaitre !",
                         "jeu"
         ])
     }else if(etat.retardMaison > 3){
-    loquace.script(["j aie aie aie, j'ai du prendre le bus d'après. Je vais être en retard....",
-                    "j C'est bon j'ai le temps avant mon arrêt",
-                    "j mais il ne faut pas que je me fasse distraire !",
-                    "m clique sur les pensées intrusive pour les faire disparaitre !",
+    loquace.script(["j J'ai du prendre le bus d'après... Je vais être en retard....",
+                    "j J'ai le temps avant mon arrêt",
+                    "m Clique sur les pensées intrusive pour les faire disparaitre !",
                     "jeu"
     ])
     } 
@@ -47,20 +44,19 @@ loquace.registerCommand('goecole', () => {
 
 //////////////////////////Bulle///////////////////
 
-let Pensée = ["j'espère que j'ai bien pris toutes mes affaires", 
+let Pensée = ["j'ai bien pris toutes mes affaires?", 
             "Maman sait que je fais pas exprès", 
-            "Je me sens quand même coupable...", 
+            "Je me sens coupable...", 
             "J'ai trop aimé le dernier épisode de Naruto",
-            "Je me demande ce qu'on va faire à l'école aujourd'hui",
+            "On va faire quoi à l'école aujourd'hui?",
             "Il fait beau",
-            "j'espère que j'aurais le temps d'aller jouer dehors",
-            "j'ai un peu peur du rendez-vous aux cabinet de psychologie",
+            "J'aimerais aller jouer dehors",
+            "j'ai un peu peur du rendez-vous au psychologue",
             "J'espère que le repas de la cantine sera bon",
-            "Il est trop stylé le manteau de la dame, on dirait Matrix",
-            "jpp"
+            "Stylé le manteau de la dame, on dirait Matrix en orange",
+            "mhm... c'est quoi se batiment?",
+            "c'est quoi cette rue?"
 ];
-
-
 
 let NPensée = 0
 let score = 0;

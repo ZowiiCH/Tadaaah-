@@ -8,40 +8,54 @@ function init(){
     scene('psy2', () => {
 
         add([
-            sprite('psy'),
+            sprite('psy2'),
         ]);
+
+const self = add([
+    sprite('self',  {
+    frame: 26}
+    ),
+    pos(167 ,90),
+    area(),
+]);
+
 loquace.registerCommand('fin', () => {
 go('fin')})
 
-        onButtonPress("space",()=> {loquace.next( )});
+let spriteSelf = 0
+
+        onButtonPress("space",()=> {
+            loquace.next( ), 
+            spriteSelf++, 
+            self.frame = spriteSelf
+        });
+
         loquace.script([
-        "p Bonjour ! Comment allez-vous? C'est le grand jours, nous allons faire le point sur la médication",
-        "j Bonjour, je vais bien merci. Oui, j'avais hâte de pouvoir en parler avec vous!",
-        "p ha? Expliques-moi ce qui t'arrives.",
+        "p Bonjour ! Nous allons faire le point sur la médication.", //1
+        "j Bonjour, j'avais hâte de pouvoir en parler avec vous!",
+        "p Expliques-moi ce qui t'arrives.",
         "j bah...ça va beaucoup mieux avec mes parents et à l'école...",
-        "j je range mieux ma chambre, je fais mes devoirs et je rate presque plus le bus!",
-        "p ha mais c'est génial tous ça, mais j'ai l'impression qu'il y'a autre chose...",
+        "j je range mieux ma chambre, je fais mes devoirs et je rate presque plus le bus!", // 5
+        "p C'est génial tous ça, mais j'ai l'impression qu'il y'a autre chose...",
         "p Tous n'est pas obligé d'être positif tu sais?",
         "j ...c'est vrai....,j'ai l'impression que j'ai changé",
         "p Comment cela?",
-        "j bah...mes copains disent que je fais moins de blague",
+        "j bah...mes copains disent que je fais moins de blague", //10
         "j J'avais toujours pleins d'histoire, des fois des musiques, qui arrivaient dans ma tête.",
-        "j Maintenant, j'en ai plus trop, ma tête est plus calme, mais des fois cela me manque.",
+        "j J'en ai plus trop, ma tête est plus calme, mais des fois cela me manque.",
         "p Oui, c'est une des conséquances du médicaments, cela calme l'hyperactivité.",
-        "p Mais l'hyperactivitée, c'est aussi le moteurs de pleins de choses positive !",
-        "p il est important de trouvé le traitement adapté,",
-        "p tu as d'autre exemple",
-        "j A l'école, cela m'arrive plus souvent d'être 'trop' concontré",
+        "p L'hyperactivitée, c'est aussi le moteurs de pleins de choses positive !",
+        "j A l'école, cela m'arrive plus souvent d'être 'trop' concentré", //15
         "j et des fois j'ai l'impression d'étouffer un peu...",
-        "p je vois, on va adapté le traitement on conséquances.",
-        "p le médicament n'est pas une baguette magique malheureusement,",
-        "p il est important de continué à travailler à côté pour aller mieux.",
-        "p Il y'a des personnes TDAH qui ne prennent pas de traitement",
+        "p il est important de trouvé le traitement qu'il te fait, on va l'adapté.",    
+        "p le médicament n'est pas une baguette magique,",
+        "p il est important de continué à mettre des stratégies en place pour aller mieux.",
+        "p Il y'a des personnes TDAH qui ne prennent pas de traitement", //20
         "p c'est aussi possible lorsque tu as bien mis en place des outils!",
-        "j Oui, c'est vrai. Je vois que pendant les week-end et les vacances,",
-        "j quand je prends pas le traitement, je vais mieux aussi !",
-        "j et mes vrais copains sont toujours contents de me retrouvé, avec ou sans médicament!",
-        "j ils savent maintent, que je fais pas exprès.",
+        "j Oui, c'est vrai. Pendant les week-end et les vacances,",
+        "j je prends pas le traitement, je vais bien aussi grâce aux outils!",
+        "j et mes copains sont toujours contents de me retrouvé, avec ou sans médicament!",
+        "j ils savent maintent, que je fais pas exprès.", //25
         "fin"
         ])
     })

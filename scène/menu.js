@@ -21,11 +21,11 @@ function init() {
     
     
         bouton.onClick(() => {
-            if(début >= 2) go('chambre');
+            if(début >= 1) go('chambre');
         });
 
-    loquace.script([" tu peux appuyer sur la bare espace pour faire passé le texte !",
-        "et utiliser la souris pour appuyer sur commencer :)"
+    loquace.script([" Appuie sur espace pour faire passé le texte !",
+        "et utiliser la souris pour cliquer sur commencer :)"
     ])
     });
     

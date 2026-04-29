@@ -14,20 +14,18 @@ function init(){
         onButtonPress("space",()=> {loquace.next( )});
         loquace.script([
         "p Bonjour, comment ça va depuis la semaine dernière?",
-        // "j ça va, mais j'ai encore eu une remarque dans mon agenda...",
-        // "p ho, je suis désolé de l'entendre. Je pense que la session d'aujourd'hui pourra t'aider",
-        // "p tu te souviens, la semaine passé, nous avons fait un long questionnaire",
-        // "j Ha! Oui ! Je me souviens, je croyais qu'il finirait jamais !",
-        // "p hahaha, je comprend c'est vrai qu'il est long. Mais, maintenant j'ai une reponse à te donner",
-        // "p Le quizz que l'on a fait était pour savoir si tu avais des symptômes du trouble déficit de l'attention avec ou sans hypercativité",
-        // "p est ce que tu en as déjà entendu parler",
-        // "j Oui ! C'est le Tadaaaah, c'est ma soeur qui l'appelle comme cela, elle trouve cela plus drôle",
-        // "j mais, je crois qu'on dit le Té-Dé-A-acH normalement",
-        // "p Exactement ! Je te propose que l'on reprenne ensemble les catégories et on va essayé de faire des liens ensembles avec ton quotidien",
-        // "p Le TDAH se divise en deux catégories, tu à le trouble de l'attention",
-        // "p L'attetion c'est ta capacité à te concentrer sur quelque chose",
-        // "p et tu à l'hyperactivité, c'est le fait d'avoir parfois trop d'énergie",
-        "m Clique sur le bouton correspondant au trouble du symptome!",
+        "j ça va, mais j'ai encore eu une remarque dans mon agenda...",
+        "p ho, je suis désolé. Je pense que la session d'aujourd'hui pourra t'aider.",
+        "p Nous allons faire un questionnaire",
+        "p Le quizz concernait le trouble déficit de l'attention avec ou sans hypercativité.",
+        "p Tu sais ce que c'est?",
+        "j Oui ! C'est le Tadaaaah, c'est ma soeur qui l'appelle comme ça !",
+        "j On dit le Té-Dé-A-acH normalement",
+        "p Exactement ! On va reprendre ensemble les symptômes.",
+        "p Il y'a deux catégories : ",
+        "p L'attetion c'est ta capacité à te concentrer sur quelque chose",
+        "p et l'hyperactivité, c'est le fait d'avoir trop d'énergie.",
+        "m Pour chaque symptôme, clique sur le bouton du trouble qui y correspond !",
         "jeu"
         ]);
 
@@ -60,10 +58,10 @@ function jeuSymptome(){
             destroy(boutonA),
             destroy(boutonH),
             loquace.script(["m Bravo, tu as fini le quizz !",
-                "p Comme tu peux le voir, les symtômes sont très divers.",
-                "p D'après les résultats de la semaine dernière, tu es effectivement TDAH",
-                "p ce que nous allons faire maintenant, c'est testé un traitement",
-                "p nous nous revoyons dans un mois pour faire le points!",
+                "p Il y'a beaucoup de symtômes différents.",
+                "p D'après les résultats, tu es TDAH",
+                "p Ce que nous allons faire maintenant, c'est testé un traitement",
+                "p On se revoit dans un mois pour faire le points!",
                 "concerta"
             ]);
         }
@@ -74,7 +72,7 @@ function jeuSymptome(){
                 "m se perdre dans ses pensées."
             ],
             'sympt1':[
-                "m avoir besoin de toujours bouger, se tortiller"
+                "m avoir besoin de toujours bouger, se tortiller."
             ],
             'sympt2':[
                 "m perdre régulièrement ces affaires."
@@ -86,7 +84,7 @@ function jeuSymptome(){
                 "m se faire distraire par ce qui nous entour."
             ],
             'sympt5':[
-                "m parlez souvent trop"
+                "m parlez souvent trop."
             ]
         }   );
 

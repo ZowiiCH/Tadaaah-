@@ -21,7 +21,7 @@ function init() {
     onButtonPress("space",()=> {loquace.next()})
 
     loquace.script(["j Je n'ai pratiquement plus raté le bus depuis un mois",
-                    "j J'ai moins peur qu'avant d'être en retard maintenant",
+                    "j J'ai moins peur qu'avant d'être en retard",
                     "m clique sur les pensées intrusive pour les faire disparaitre !",
                     "jeu"       
     ])
@@ -32,19 +32,14 @@ function init() {
 
 let Pensée = ["C'est vrai que je perd moins mes affaires",
     "Jasmine m'a dit que je faisais moins de bruit en classe.",
-    "Mais, elle m'a aussi dit que je faisais moins de blagues...",
+    "Mais, elle m'a dit que je faisais moins de blagues...",
     "ha, il me reste trois arrêts",
-    "Lucas m'a aussi dit que les histoires que j'inventais lui manques",
+    "Lucas m'a dit que les histoires que j'inventais lui manques",
     "C'est vrai que j'ai moins d'idée qui me viennent en tête",
     "c'est plus silencieux, mais plus ennuyant aussi....",
 ];
 
-
-
-
 let NPensée = 0
-
-
 
 function créerPensée(){
     if(NPensée >= Pensée.length){return loquace.script([

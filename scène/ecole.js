@@ -17,24 +17,22 @@ function init(){
         if(etat.retardMaison >= 3 && etat.retardBus >=5000){
             onButtonPress("space",()=> {loquace.next( )});
             loquace.script([
-                "e Bonjour, j'ai l'habitude que vous soyez en retard, mais aujourd'hui c'est un reccord",
+                "e Bonjour, c'est un reccord pour un retard.",
                 "j Bonjour, je suis désolé....",
-                "e il va me falloir votre agenda, pour un tel retard, c'est malheureusement une heure d'arrêt.",
-                "j Mes parents vont me buté",
-                "e Bien, tout le monde à sa table, nous allons commencé le cours",
-                "m appuie sur espace pour rester concontré! ",
+                "e il va me falloir votre agenda, c'est une heure d'arrêt.",
+                "j Mes parents bont me butté...",
+                "m Le cours à commencer, appuie sur 'C' pour rester te concentrer !",
                 "travail"
             ]);
 
         }else if(etat.retardMaison >= 3 && etat.retardBus < 5000 ||etat.retardMaison < 3 && etat.retardBus > 5000){         
             onButtonPress("space",()=> {loquace.next( )});
             loquace.script([
-                "e Bonjour ! encore une arrivée tardive, c'est déjà la deuxième.",
+                "e Bonjour ! Encore une arrivée tardive.",
                 "j Bonjour, je suis désolé....",
                 "e C'est le dernier avertissement, la prochaine fois ce sera l'heure d'arrêt.",
                 "j ouf, je l'ai échapé belle, mais je peux plus faire d'erreur....",
-                "e Bien, tout le monde à sa table, nous allons commencé le cours",
-                "m appuie sur espace pour rester concontré! ",
+                "m Le cours à commencer, appuie sur 'C' pour rester te concentrer ! ",
                 "travail"
             ]);
 
@@ -44,9 +42,8 @@ function init(){
                 "e Bonjour ! Cela fait plaisir de vous voir à l'heure.",
                 "j Bonjour, merci Monsieur ! J'essaie vraiment de faire des efforts.",
                 "e Oui et cela se voit. Continuez ainsi !",
-                "j J'ai commencé à bien utilisé mon réveil et mon timer, je suis moins souvent en retard.",
-                "e Bien, tout le monde à sa table, nous allons commencé le cours",
-                "m appuie sur la touche 'C' pour rester concontré!",
+                "j J'ai commencé à bien utilisé mon réveil et mon timer.",
+                "m Le cours à commencer, appuie sur 'C' pour rester te concentrer !",
                 "travail"
             ]);
 
@@ -181,39 +178,37 @@ go('psy')})
                     "travail"
             ],
             'distrait2':[
-                "Hey! Passe moi la balle ! C'est à mon tours de jouer !",
-                "j Hey Jasmine, on jour à la balle au prisionnier après?",
-                "po shuuut, j'essaie de travailler....on regarde à la récré!",
+                    "Hey! Passe moi la balle ! C'est à mon tours de jouer !",
+                    "j Hey Jasmine, on jour à la balle au prisionnier après?",
+                    "po shuuut, j'essaie de travailler....on regarde à la récré!",
                     "travail"
             ],
             'distrait3':[
-                "j pff... j'aimerais bien travaillé mais il y'a vraiment trop de bruit aujourd'hui",
-                "e Bon, c'est la troisième fois que je vous vois distraire vous camarades, amenez moi votre carnet",
-                "j Cela me fatigue, pourant j'essaie....",
-                "j j'ai rendez-vous avec la psy après l'école, j'espère qu'elle pourra m'aider",
-                "psy"
+                    "j pff... il y'a vraiment trop de bruit aujourd'hui",
+                    "e Bon, c'est la troisième fois que vous distrayez vous camarades, amenez moi votre carnet",
+                    "j Cela me fatigue, pourant j'essaie....",
+                    "j j'ai rendez-vous avec la psy après l'école, j'espère qu'elle pourra m'aider",
+                    "psy"
             ],
             'hyp1':[
                     "e Pour le devoir....",
-                    "j Mince, j'ai pas écouté la consigne, j'étais déjà entrain de faire le travail...",
+                    "j J'ai pas écouté la consigne avant de commencer...",
                     "travail"
                 ],
             'hyp2':[
-                "e Pour la question numéro 2, qui connait la R..",
-                "j Ce sont les Koala ! ",
-                "e Juste, mais vous m'avez coupé la parole et oublié de levez la main, donc je ne vous l'accord pas",
-                "j Mince, des fois j'arrive pas à m'empêcher de parler....",
-                "travail"
+                    "e Pour la question numéro 2, qui connait la R..",
+                    "j Ce sont les Koala ! ",
+                    "e Juste,mais levez la main avant de prendre la parole.",
+                    "j Mince, des fois j'arrive pas à m'empêcher de parler....",
+                    "travail"
             ],
             'hyp3':[
-                "po Hey, tu es à nouveau entrain de faire tramblé toute la table avec ta jambe!",
-                "e On n'entend que vous dans la classe, entre le clique du stylo et la jambe qui tremble...",
-                "j Je suis désolé, quand je me concentre, je me rend plus compte de rien des fois...",
-                "e C'est bien de se concentré, mais pas au dépend de déranger le reste de la classe ! ",
-                "e Amenez moi votre carnet",
-                "j Cela me fatigue d'essayé de bien faire...",
-                "j j'ai rendez-vous avec la psy après l'école, j'espère qu'elle pourra m'aider",
-                "psy"
+                    "po Hey, tu es à nouveau entrain de faire tramblé toute la table avec ta jambe!",
+                    "e On n'entend que vous, entre les bruit de stylo et la jambe...",
+                    "j Pardon, quand je me concentre, je me rend pas compte...",
+                    "e Il faut apprendre à rester calme pour travailler, amenez moi votre carnet ",
+                    "j j'ai rendez-vous avec la psy après l'école, j'espère qu'elle pourra m'aider",
+                    "psy"
             ]
         }   );
 

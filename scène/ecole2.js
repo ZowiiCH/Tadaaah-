@@ -9,19 +9,19 @@ function init(){
     scene('ecole2', () => {
 
     add([
-        sprite('ecole'),
+        sprite('ecole2'),
     ]);
 
     onButtonPress("space",()=> {loquace.next( )});
 
     loquace.script([
-        "e Mais bonjour ! C'est la seconde semaine, sans arrivée tardive.",
-        "e vous avez même vos devoirs avec,  félicitation !",
-        "j Merci Monsieur.",
-        "e J'ai remarqué que vous coupiez moins la parole maintenant",
-        "e mais, vous participez moins de manière générale.",
-        "j Oui, c'est vrai, je sais pas trop pourquoi Monsieur, mais je vous écoutes. Promis !",
-        "e Je n'ai pas de doute la dessus. Vous avez souvent de bonne idée, il faut osez les dire",
+        "e Bonjour ! Seconde semaine, sans arrivée tardive.",
+        "e vous avez même vos devoirs,  félicitation !",
+        "j Merci Madame.",
+        "e Vous coupiez moins la parole maintenant",
+        "e mais, vous participez moins en cours.",
+        "j Oui, c'est vrai, je sais pas trop pourquoi Madame, mais je vous écoutes. Promis !",
+        "e Je n'en doute pas. Vous avez souvent de bonne idée, il faut osez les dire.",
         "e Allez c'est l'heure, le cours commence.",
         "travail2"
     ]);
@@ -131,22 +131,21 @@ go('psy2')})
         loquace.script({
             'hyp1':[
                     "po C'est cool que tu te fasse moins grondé",
-                    "po mais, on rigole beaucoup moins à l'école depuis que tu fais moins de blagues",
-                    "j Oui, je sais je trouve aussi que je rigole moins...",
+                    "po mais, on rigole plus trop depuis que tu fais moins de blagues",
                     "travail2"
                 ],
             'hyp2':[
-                "po Tiens ça t'arrives encores des fois des te balcer sur ta chaise !",
-                "j Oui, ça m'arrive encore de ne plus me rendre compte de ce qui se passe...",
+                "po Tiens ça t'arrives encores des fois des te balancer sur ta chaise !",
+                "j Oui, je ne suis plus distrait, mais des fois j'ai mal à la tête,",
+                "j est ce que je me concentre trop?",
                 "travail2"
             ],
             'hyp3':[
                 "e Cela fait trois fois que je vous apelle.",
-                "j Je suis désolé j'étais trop concentré sur le devoir.",
-                "e Je comprends, mais il faut quand même resté à l'écoutes de ce qui se passe.",
-                "e le cours est fini, vous pouvez me rendre ce que vous avez fait.",
-                "j Oups, je n'ai pas vu l'heure, faudra quand j'en parle à mon rendez-vous pour parler du médicament.",
-                "j On va faire le point aujourd'hui !",
+                "j Je suis désolé, je vous ai pas entendu.",
+                "e Le cours est fini, vous pouvez me rendre ce que vous avez fait.",
+                "j Oups, je n'ai pas vu l'heure, j'en parlerais à ma psy!",
+                "j On va faire le point aujourd'hui.",
                 "psy2"
             ]
         }   );

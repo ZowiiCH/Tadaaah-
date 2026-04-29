@@ -86,10 +86,16 @@ loquace.characters({
 loadSprite('menu', '/assets/menu.png')
 loadSprite('bus', '/assets/bus.png');
 loadSprite('bus2', '/assets/bus2.png');
-loadSprite('ecole','/assets/ecole.png') 
+loadSprite('ecole','/assets/école.png')
+loadSprite('ecole2','/assets/école2.png')  
 loadSprite('psy','/assets/buro.png'),
+loadSprite('psy2','/assets/buro2.png'),
 loadSprite('chambre','/assets/chambre.png')
 loadSprite('chambre2','/assets/chambre2.png')
+loadSprite('self','/assets/self.png',{
+    sliceX: 7,
+    sliceY: 4,
+})
 loadSprite('sac', '/assets/sac.png', {
     sliceX: 1,
     sliceY: 2,
@@ -164,4 +170,4 @@ loadSprite('bubble', '/assets/bubble.png',{
 })
 loadSprite('BVerte', 'assets/bulleVerte.png')
 
-go('bus2') 
+go('chambre2') 

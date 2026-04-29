@@ -16,7 +16,7 @@ function init(){
 
     onButtonPress("space",()=> {loquace.next( ), début++, console.log(début)});
         loquace.script([
-            "j Il faut que je parte prendre le bus pour l'école.",
+            "j Il faut que je prenne le bus pour l'école.",
             "j  Ou son mes devoirs ?? Vite, j'ai déjà eu des arrivées tardives.",
             "m Clique sur les objets pour chercher tes devoirs !",
         ]);
@@ -132,7 +132,7 @@ jean.onHoverEnd(() =>{
 jean.onClick(()=>{if(début >= 3){
     etat.retardMaison += 1;
     console.log(etat.retardMaison);
-    loquace.vn('je devrais mettre mes habits sales à laver');
+    loquace.vn('il devrait être au linge sale');
     jean.destroy();}
 })
 
@@ -227,7 +227,7 @@ devoir.onClick(()=>{if(début >= 3){
     console.log(etat.retardMaison)
     devoir.play("trouvé")
     loquace.script(["Yeah! J'avais oublié que j'avais ''rangé'' mon bureau hier",
-        "Vite, faut que j'ai prendre le bus !",
+        "Vite, le bus !",
         "bus"
     ])
 loquace.registerCommand('bus', () => {
