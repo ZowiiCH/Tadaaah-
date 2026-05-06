@@ -16,7 +16,7 @@ function init(){
         "p Bonjour, comment ça va depuis la semaine dernière?",
         "j ça va, mais j'ai encore eu une remarque dans mon agenda...",
         "p ho, je suis désolé. Je pense que la session d'aujourd'hui pourra t'aider.",
-        "p Nous allons faire un questionnaire",
+        "p Nous allons voir les résultats du questionnaire de la semaine passée",
         "p Le quizz concernait le trouble déficit de l'attention avec ou sans hypercativité.",
         "p Tu sais ce que c'est?",
         "j Oui ! C'est le Tadaaaah, c'est ma soeur qui l'appelle comme ça !",

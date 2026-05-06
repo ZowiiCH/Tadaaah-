@@ -20,25 +20,24 @@ loquace.registerCommand('goecole', () => {
 
     onButtonPress("space",()=> {loquace.next()})
   
-    if(etat.retardMaison < 3){
+    if(etat.retardMaison < 4){
         loquace.script(["j Même pas eu besoin de courir pour prendre le bus !",
                         "j J'ai le temps avant mon arrêt",
                         "m Clique sur les pensées intrusives pour les faire disparaitre !",
                         "jeu"
         ])
-    }else if(etat.retardMaison == 3){
-        loquace.script(["j J'ai du courir pour attraper le bus!",
-                        "j C'est bon j'ai le temps avant mon arrêt",
-                        "m Clique sur les pensées intrusive pour les faire disparaitre !",
-                        "jeu"
-        ])
-    }else if(etat.retardMaison > 3){
+    }else if(etat.retardMaison > 6){
     loquace.script(["j J'ai du prendre le bus d'après... Je vais être en retard....",
                     "j J'ai le temps avant mon arrêt",
                     "m Clique sur les pensées intrusive pour les faire disparaitre !",
                     "jeu"
     ])
-    } 
+    } else{        
+        loquace.script(["j J'ai du courir pour attraper le bus!",
+                        "j C'est bon j'ai le temps avant mon arrêt",
+                        "m Clique sur les pensées intrusive pour les faire disparaitre !",
+                        "jeu"
+        ])}
 
 
 
@@ -55,7 +54,17 @@ let Pensée = ["j'ai bien pris toutes mes affaires?",
             "J'espère que le repas de la cantine sera bon",
             "Stylé le manteau de la dame, on dirait Matrix en orange",
             "mhm... c'est quoi se batiment?",
-            "c'est quoi cette rue?"
+            "C'est quoi cette rue?",
+            "Ouf, j'ai eu peur d'avoir raté mon arrêt",
+            "J'aimerais trop aller au Zoo ce week-end",
+            "Comme pour l'anniversaire de Jasmine !",
+            "J'aime trop les gâteaux",
+            "Je me demande ce que j'ai pour la recré",
+            "J'ai toujours pas rangé ma chambre",
+            "faut pas que j'oublie ce soir",
+            "des fois, j'ai envie, mais je me sens paralisé",
+            "c'est comme si y'avait un mur dans ma tête",
+            "ça me rend triste et en colère.",
 ];
 
 let NPensée = 0
@@ -65,14 +74,14 @@ let scoreFinal = 0
 function jpp(){
 
 
-    if(scoreFinal <= 5000){
+    if(scoreFinal <= 10000){
         loquace.script(["Ha ! C'est mon arrêt !",
                 "goecole"
         ])
 
     }else{
 
-    const BulleRouge = add([ //Marche pas ????
+    const BulleRouge = add([ 
         sprite('bubble', {
             frame :0 }
         ),
@@ -83,7 +92,7 @@ function jpp(){
        const auSecour = add([
             text(["HO NON J'AI RATE MON ARRET"],{ size: 24, width: 200 }),
             color(BLACK),
-            anchor('center'), // si je met anchor center c'est pire...
+            anchor('center'), 
             pos(BulleRouge.pos), 
          ])
 
@@ -107,18 +116,16 @@ function créerPensée(){
     ]); 
 
     const penséeInt = add([
-            text(Pensée[NPensée], { size: 16, width: 200 }),
-            color(BLACK),
-            anchor("center"), // si je met anchor center c'est pire...
-            pos(
-                BulleVerte.pos
-            ), 
+        text(Pensée[NPensée], { size: 16, width: 200 }),
+        color(BLACK),
+        anchor("center"), 
+        pos(
+            BulleVerte.pos
+        ), 
 
     ]);
 
-    BulleVerte.fadeIn(1);
-
-    NPensée++;
+    BulleVerte.fadeIn(0.5);
 
     onUpdate(() => {
         score++;
@@ -127,10 +134,11 @@ function créerPensée(){
     BulleVerte.onClick(() => {
         destroy(BulleVerte);
         destroy(penséeInt);
+        NPensée++;
         scoreFinal = score;
+        créerPensée(); 
         console.log(scoreFinal);
                 etat.retardBus = scoreFinal;
-        wait(0.5, () => créerPensée()); // prochaine bulle après 1 seconde
     });
 }
 

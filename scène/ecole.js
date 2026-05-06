@@ -204,7 +204,7 @@ go('psy')})
             ],
             'hyp3':[
                     "po Hey, tu es à nouveau entrain de faire tramblé toute la table avec ta jambe!",
-                    "e On n'entend que vous, entre les bruit de stylo et la jambe...",
+                    "e On n'entend que vous, au fond de la classe!",
                     "j Pardon, quand je me concentre, je me rend pas compte...",
                     "e Il faut apprendre à rester calme pour travailler, amenez moi votre carnet ",
                     "j j'ai rendez-vous avec la psy après l'école, j'espère qu'elle pourra m'aider",

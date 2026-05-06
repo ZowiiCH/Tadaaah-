@@ -19,7 +19,7 @@ const k = kaplay({
             keyboard: ["space"],
         },
     },
-plugins: [loquacePlugin],
+    plugins: [loquacePlugin],
 });
 
 loquace.init();
@@ -40,46 +40,67 @@ loquace.characters({
         dialogueType : 'pop',
         position : 'center',
         doTween : false,
-        dialogText : {
-            color : RED
-        }},
+        dialogOptions :{
+            dialogText : {
+                color : [0,0,0]
+            }
+        },
+    },
     j : {
-        name : 'Hadat',
+        name : 'joueur-euse',
         dialogueType : 'pop',
         position : 'topleft',
         doTween : false,
-        dialogText : {
-            color : RED
-        }},
+        dialogOptions :{
+            dialogText : {
+                color : [111,0,255]
+            }},
+        },
     e : {
         name : 'enseignant',
         dialogueType : 'vn',
         position : 'topright',
         doTween : false,
-        dialogText : {
-            color : GREEN
-        }
-    },
+        dialogOptions :{
+            dialogText : {
+                color : [0,128,0]
+            }
+        },
+    },  
     po : {
         name : 'Pote',
         dialogueType : 'vn',
         position : 'topright',
         doTween : false,
-        dialogText : {
-            color : YELLOW
-        }
+        dialogOptions :{
+            dialogText : {
+                color : [255,0,255]
+            }
+        },
     },
     p : {
         name : 'PSY',
         dialogueType : 'vn',
         position : 'topright',
         doTween : false,
-        dialogText : {
-            color : BLUE
-        }
+        dialogOptions :{
+            dialogText : {
+                color : [0,0,255]
+            }
+        },
     },
-    }
-);
+    u : {
+        name : 'urgence',
+        dialogueType : 'pop',
+        position : 'center',
+        doTween : false,
+        dialogOptions :{
+            dialogText : {
+                color : [255,0,0]
+            }
+    },
+},
+});
 
 
 //_________________________ SPRITES___________________________
@@ -170,4 +191,4 @@ loadSprite('bubble', '/assets/bubble.png',{
 })
 loadSprite('BVerte', 'assets/bulleVerte.png')
 
-go('chambre2') 
+go('menu') 

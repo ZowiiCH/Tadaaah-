@@ -65,7 +65,7 @@ function créerPensée(){
 
     ]);
 
-    BulleVerte.fadeIn(1);
+    BulleVerte.fadeIn(0.5);
 
     NPensée++;
 
@@ -73,7 +73,6 @@ function créerPensée(){
     BulleVerte.onClick(() => {
         destroy(BulleVerte);
         destroy(penséeInt);
-
         wait(0.5, () => créerPensée()); // prochaine bulle après 1 seconde
     });
 }

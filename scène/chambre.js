@@ -6,235 +6,266 @@ export{
 
 
 function init(){
-        scene('chambre', () => {
+    scene('chambre', () => {
 
         add([
             sprite('chambre'),
         ]);
     
     let début = 0
+    loquace.registerCommand('trouve', () => {chercher()});
+        onButtonPress("space",()=> {loquace.next( ), début++, console.log(début)});
+            loquace.script([
+                "j Où sont mes devoirs ?? Vite, je vais raté le bus !!",
+                "j Je vais encore avoir une arrivée tardive....",
+                "m Clique sur les objets pour chercher tes devoirs !",
+                "trouve"
+            ]);
 
-    onButtonPress("space",()=> {loquace.next( ), début++, console.log(début)});
-        loquace.script([
-            "j Il faut que je prenne le bus pour l'école.",
-            "j  Ou son mes devoirs ?? Vite, j'ai déjà eu des arrivées tardives.",
-            "m Clique sur les objets pour chercher tes devoirs !",
-        ]);
+
+
+// sortie de la fonction pour qu'il soit visible directement
+// et n'aparaisse pas seulement au début du jeu.
+    const feuille = add([
+        sprite('feuille',  {
+        frame: 1}
+        ),
+        pos(640,390),
+        area(),
+        "cligno"
+    // dans les options d'aréa, on peut mettre une shape pour que cela ne soit pas la taille
+    ]);
 
 ////////////////////////////////SAC//////////////////////
+    function chercher(){
+        
+    function pression(){if(etat.retardMaison === 3){
+        console.log("retard3")
+            wait(1.5, () =>
+                loquace.script(["u Je vais devoir courir pour prendre le bus !"
+            ]))
+        }else if(etat.retardMaison === 6){
+                console.log("retard6")
+            wait(1.5, () =>
+                loquace.script(["u Ho non, j'ai raté le bus...",
+            ]))
+        }
+    };
 
-const sac = add([
-    sprite('sac', {
-        frame: 1}),
-    pos(230,235),
-    area(),
-    "cligno"   
-    // dans les options d'aréa, on peut mettre une shape pour que cela ne soit pas la taille
-]);
 
-sac.onHover(() => {if(début >= 3){
-    sac.play("cligno");
-    loquace.vn("sac d'école")};
-});
+        const sac = add([
+            sprite('sac', {
+                frame: 1}),
+            pos(230,235),
+            area(),
+            "cligno"   
+            // dans les options d'aréa, on peut mettre une shape pour que cela ne soit pas la taille
+        ]);
 
-sac.onHoverEnd(() => {
-    sac.stop();
-    sac.frame = 1;
-    //loquace.clear(); // ← efface le message loquace
-});
+        sac.onHover(() => {if(début >= 3){
+            sac.play("cligno");
+            loquace.vn("sac d'école")
+        }});
 
-sac.onClick(() => {if(début >= 3){
-    etat.retardMaison += 1;
-    console.log(etat.retardMaison);
-    sac.destroy();
-    loquace.vn("Ca aurait été trop simple...");}
-});
+        sac.onHoverEnd(() => {
+            sac.stop();
+            sac.frame = 1;
+        });
 
-//////////////////////BOX///////////////////
-const box = add([
-    sprite('box',  {
-    frame: 1}
-    ),
-    pos(475,90),
-    area(),
-    "cligno"
-// dans les options d'aréa, on peut mettre une shape pour que cela ne soit pas la taille
-]);
+        sac.onClick(() => {if(début >= 3){
+            etat.retardMaison += 1;
+            console.log(etat.retardMaison);
+            sac.destroy();
+            loquace.script(
+                ["j Ca aurait été trop simple..."]
+            );
+            pression();
+        }});
 
-box.onHover(() =>{if(début >= 3){
-    box.play("cligno")
-    loquace.vn("Boîte")};
-});
+        //////////////////////BOX///////////////////
+        const box = add([
+            sprite('box',  {
+                frame: 1}
+            ),
+            pos(475,90),
+            area(),
+            "cligno"
+        // dans les options d'aréa, on peut mettre une shape pour que cela ne soit pas la taille
+        ]);
 
-box.onHoverEnd(() =>{    
-    box.stop()
-    box.frame = 1
-    // loquace.clear()
-})
+        box.onHover(() =>{if(début >= 3){
+            box.play("cligno")
+            loquace.vn("Boîte")
+        }});
 
-box.onClick(()=>{if(début >= 3){
-    etat.retardMaison += 1;
-    console.log(etat.retardMaison);
-    loquace.vn('Elle est trop petite pour y mettre ses devoirs...');
-    box.destroy();}
-})
+        box.onHoverEnd(() =>{    
+            box.stop()
+            box.frame = 1
+        });
 
-//////////////////////Feuille///////////////////
-const feuille = add([
-    sprite('feuille',  {
-    frame: 1}
-    ),
-    pos(640,390),
-    area(),
-    "cligno"
-// dans les options d'aréa, on peut mettre une shape pour que cela ne soit pas la taille
-]);
+        box.onClick(()=>{if(début >= 3){
+            etat.retardMaison += 1;
+            console.log(etat.retardMaison);
+            loquace.script(
+                ["j Elle est trop petite pour y mettre ses devoirs..."]
+            );
+            box.destroy();
+        }});
 
-feuille.onHover(() =>{if(début >= 3){
-    feuille.play("cligno")
-    loquace.vn("feuilles")};
-});
+        //////////////////////Feuille///////////////////
 
-feuille.onHoverEnd(() =>{    
-    feuille.stop()
-    feuille.frame = 1
-    // loquace.clear()
-})
+        feuille.onHover(() =>{if(début >= 3){
+            feuille.play("cligno")
+            loquace.vn("feuilles")};
+        });
 
-feuille.onClick(()=>{if(début >= 3){
-    etat.retardMaison += 1;
-    console.log(etat.retardMaison);
-    loquace.vn('Je devrais jeter mes brouillons');
-    feuille.destroy();}
-})
-//////////////////////Jean///////////////////
-const jean = add([
-    sprite('jean',  {
-    frame: 1}
-    ),
-    pos(13,365),
-    area(),
-    "cligno"
-// dans les options d'aréa, on peut mettre une shape pour que cela ne soit pas la taille
-]);
+        feuille.onHoverEnd(() =>{    
+            feuille.stop()
+            feuille.frame = 1
+        });
 
-jean.onHover(() =>{if(début >= 3){
-    jean.play("cligno")
-    loquace.vn("jean")};
-});
+        feuille.onClick(()=>{if(début >= 3){
+            etat.retardMaison += 1;
+            console.log(etat.retardMaison);
+            loquace.script(["j Je devrais jeter mes brouillons"]);
+            feuille.destroy();
+                        pression();
+        }});
+    
+        //////////////////////Jean///////////////////
+        const jean = add([
+            sprite('jean',  {
+            frame: 1}
+            ),
+            pos(13,365),
+            area(),
+            "cligno"
+        // dans les options d'aréa, on peut mettre une shape pour que cela ne soit pas la taille
+        ]);
 
-jean.onHoverEnd(() =>{    
-    jean.stop()
-    jean.frame = 1
-    // loquace.clear()
-})
+        jean.onHover(() =>{if(début >= 3){
+            jean.play("cligno")
+            loquace.vn("jean")};
+        });
 
-jean.onClick(()=>{if(début >= 3){
-    etat.retardMaison += 1;
-    console.log(etat.retardMaison);
-    loquace.vn('il devrait être au linge sale');
-    jean.destroy();}
-})
+        jean.onHoverEnd(() =>{    
+            jean.stop()
+            jean.frame = 1
+            // loquace.clear()
+        })
 
-//////////////////////Oreiller///////////////////
-const oreiller = add([
-    sprite('oreiller',  {
-    frame: 1}
-    ),
-    pos(680,100),
-    area(),
-    "cligno"
-// dans les options d'aréa, on peut mettre une shape pour que cela ne soit pas la taille
-]);
+        jean.onClick(()=>{if(début >= 3){
+            etat.retardMaison += 1;
+            console.log(etat.retardMaison);
+            loquace.script(["j il devrait être au linge sale"]);
+            jean.destroy();
+                        pression();
+        }
+        })
 
-oreiller.onHover(() =>{if(début >= 3){
-    oreiller.play("cligno")
-    loquace.vn("oreiller")};
-});
+        //////////////////////Oreiller///////////////////
+        const oreiller = add([
+            sprite('oreiller',  {
+            frame: 1}
+            ),
+            pos(680,100),
+            area(),
+            "cligno"
+        // dans les options d'aréa, on peut mettre une shape pour que cela ne soit pas la taille
+        ]);
 
-oreiller.onHoverEnd(() =>{    
-    oreiller.stop()
-    oreiller.frame = 1
-    // loquace.clear()
-})
+        oreiller.onHover(() =>{if(début >= 3){
+            oreiller.play("cligno")
+            loquace.vn("oreiller")};
+        });
 
-oreiller.onClick(()=>{if(début >= 3){
-    etat.retardMaison += 1;
-    console.log(etat.retardMaison);
-    loquace.vn("Mes fiches d'allemend ! Je les avais perdu");
-    oreiller.destroy();}
-})
+        oreiller.onHoverEnd(() =>{    
+            oreiller.stop()
+            oreiller.frame = 1
+            // loquace.clear()
+        })
 
-//////////////////////Pull///////////////////
-const pull = add([
-    sprite('pull',  {
-    frame: 1}
-    ),
-    pos(100 ,105),
-    area(),
-    "cligno"
-// dans les options d'aréa, on peut mettre une shape pour que cela ne soit pas la taille
-]);
+        oreiller.onClick(()=>{if(début >= 3){
+            etat.retardMaison += 1;
+            console.log(etat.retardMaison);
+            loquace.script(["j Mes fiches d'allemend ! Je les avais perdu"]);
+            oreiller.destroy();
+                    pression();
+                }
+        })
 
-pull.onHover(() =>{if(début >= 3){
-    pull.play("cligno")
-    loquace.vn("pull")};
-});
+        //////////////////////Pull///////////////////
+        const pull = add([
+            sprite('pull',  {
+            frame: 1}
+            ),
+            pos(100 ,105),
+            area(),
+            "cligno"
+        // dans les options d'aréa, on peut mettre une shape pour que cela ne soit pas la taille
+        ]);
 
-pull.onHoverEnd(() =>{    
-    pull.stop()
-    pull.frame = 1
-    // loquace.clear()
-})
+        pull.onHover(() =>{if(début >= 3){
+            pull.play("cligno")
+            loquace.vn("pull")};
+        });
 
-pull.onClick(()=>{if(début >= 3){
-    etat.retardMaison += 1;
-    console.log(etat.retardMaison);
-    loquace.vn("juste quelques miettes dans les poches...");
-    pull.destroy();}
-})
-/////////////////////////devoir///////////////////
-const devoir = add([
-    sprite('devoir',  {
-    frame: 1}
-    ),
-    scale(0.8),
-    pos(335,40),
-    area(),
-    "cligno"
-])
+        pull.onHoverEnd(() =>{    
+            pull.stop()
+            pull.frame = 1
+            // loquace.clear()
+        })
 
-devoir.onHover(() =>{if(début >= 3){
-    devoir.play("cligno")
-    loquace.vn('tas de feuille')
+        pull.onClick(()=>{if(début >= 3){
+            etat.retardMaison += 1;
+            console.log(etat.retardMaison);
+            loquace.script(["j juste quelques miettes dans les poches..."]);
+            pull.destroy();
+                    pression();}
+        })
+        /////////////////////////devoir///////////////////
+        const devoir = add([
+            sprite('devoir',  {
+            frame: 1}
+            ),
+            scale(0.8),
+            pos(335,40),
+            area(),
+            "cligno"
+        ])
+
+        devoir.onHover(() =>{if(début >= 3){
+            devoir.play("cligno")
+            loquace.vn('tas de feuille')
+            }
+        });
+
+        devoir.onHoverEnd(() =>{    
+            devoir.stop()
+            devoir.frame = 1
+            //  loquace.clear() <= fait disparaitre les bulles de dialogues aussi....
+        })
+
+        devoir.onClick(()=>{if(début >= 3){
+            destroy(box) // marche pas quand je met les deux en un??
+            destroy(sac)
+            destroy(feuille)
+            destroy(jean)
+            destroy(oreiller)
+            destroy(pull)
+            etat.retardMaison += 1,
+            console.log(etat.retardMaison)
+            devoir.play("trouvé")
+            loquace.script(["j Trouvé! J'avais oublié que j'avais ''rangé'' mon bureau hier",
+                "u Vite, le bus !",
+                "bus"
+            ])
+        loquace.registerCommand('bus', () => {
+        go('bus')})
+
+            }
+            })
     }
-});
-
-devoir.onHoverEnd(() =>{    
-    devoir.stop()
-    devoir.frame = 1
-    //  loquace.clear() <= fait disparaitre les bulles de dialogues aussi....
-})
-
-devoir.onClick(()=>{if(début >= 3){
-    destroy(box) // marche pas quand je met les deux en un??
-    destroy(sac)
-    destroy(feuille)
-    destroy(jean)
-    destroy(oreiller)
-    destroy(pull)
-    etat.retardMaison += 1,
-    console.log(etat.retardMaison)
-    devoir.play("trouvé")
-    loquace.script(["Yeah! J'avais oublié que j'avais ''rangé'' mon bureau hier",
-        "Vite, le bus !",
-        "bus"
-    ])
-loquace.registerCommand('bus', () => {
-go('bus')})
-
-    }
-    })
     });
 
 };

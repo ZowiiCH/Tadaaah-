@@ -24,7 +24,7 @@ function init() {
             if(début >= 1) go('chambre');
         });
 
-    loquace.script([" Appuie sur espace pour faire passé le texte !",
+    loquace.script([" Appuie sur espace pour faire passer le texte !",
         "et utiliser la souris pour cliquer sur commencer :)"
     ])
     });

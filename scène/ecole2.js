@@ -116,7 +116,7 @@ function barreConcentration2(){
             labelEtat.color = YELLOW;
             etat.hyperfocal ++;
             actif = false;
-            get("barreConcentration").forEach(o => destroy(o))
+            get("barreConcentration").forEach(o => destroy(o));
             loquace.start(`hyp${etat.hyperfocal}`)
         } else {
             labelEtat.text = "Concentré";

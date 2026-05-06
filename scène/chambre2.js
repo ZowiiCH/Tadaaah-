@@ -47,7 +47,7 @@ function init(){
 
     sac.onClick(() => {if(début >= 7){
         sac.destroy();
-        loquace.script(["Oups, je les ai pas mis dans mon sac.",
+        loquace.script(["Oups, j'ai pas mis mes devoirs dans mon sac.",
            
         ]
 
