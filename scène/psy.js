@@ -13,18 +13,16 @@ function init(){
 
         onButtonPress("space",()=> {loquace.next( )});
         loquace.script([
-        "p Bonjour, comment ça va depuis la semaine dernière?",
-        "j ça va, mais j'ai encore eu une remarque dans mon agenda...",
-        "p ho, je suis désolé. Je pense que la session d'aujourd'hui pourra t'aider.",
-        "p Nous allons voir les résultats du questionnaire de la semaine passée",
-        "p Le quizz concernait le trouble déficit de l'attention avec ou sans hypercativité.",
-        "p Tu sais ce que c'est?",
-        "j Oui ! C'est le Tadaaaah, c'est ma soeur qui l'appelle comme ça !",
+        "p Bonjour, comment ça va aujourd'hui",
+        "j Bof...c'était une journée difficile.",
+        "p Ho, je suis désolé. Cette session devrait t'aider.",
+        "p Nous avons les résultats du questionnaire de la semaine passée",
+        "p Le quizz sur le trouble déficit de l'attention avec ou sans hypercativité.",
+        "j Je me souviens, le Tadaaah, ma soeur l'appelle comme ça !",
         "j On dit le Té-Dé-A-acH normalement",
-        "p Exactement ! On va reprendre ensemble les symptômes.",
-        "p Il y'a deux catégories : ",
-        "p L'attetion c'est ta capacité à te concentrer sur quelque chose",
-        "p et l'hyperactivité, c'est le fait d'avoir trop d'énergie.",
+        "p Exactement !Il y'a deux catégories de symptômes.",
+        "p L'attetion : c'est ta capacité à te concentrer sur quelque chose",
+        "p et l'hyperactivit : c'est le fait d'avoir trop d'énergie.",
         "m Pour chaque symptôme, clique sur le bouton du trouble qui y correspond !",
         "jeu"
         ]);
@@ -60,7 +58,7 @@ function jeuSymptome(){
             loquace.script(["m Bravo, tu as fini le quizz !",
                 "p Il y'a beaucoup de symtômes différents.",
                 "p D'après les résultats, tu es TDAH",
-                "p Ce que nous allons faire maintenant, c'est testé un traitement",
+                "p Tu va testé un traitement",
                 "p On se revoit dans un mois pour faire le points!",
                 "concerta"
             ]);
