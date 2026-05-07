@@ -18,6 +18,10 @@ function init(){
             loop: true, 
         });
         
+        onSceneLeave(() => {
+            music.stop()
+        });
+        
         loquace.registerCommand('chercher', () => {chercher()});
 
         onButtonPress("space",()=> {loquace.next()});
@@ -47,12 +51,12 @@ function init(){
             function pression(){if(etat.retardMaison === 3){
 
                 console.log("retard3")
-                    wait(1.5, () =>
+                    wait(1.3, () =>
                         loquace.script(["u Je vais devoir courir pour prendre le bus !"
                     ]))
                 }else if(etat.retardMaison === 6){
                         console.log("retard6")
-                    wait(1.5, () =>
+                    wait(1.3, () =>
                         loquace.script(["u Ho non, j'ai raté le bus...",
                     ]))
                 }
@@ -271,7 +275,6 @@ function init(){
                     "bus"]
                 )
                 loquace.registerCommand('bus', () => {
-                    music.stop()
                     go('bus')
                 })
             });

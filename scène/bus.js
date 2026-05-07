@@ -81,7 +81,7 @@ function init() {
         let scoreFinal = 0
 
         //_______Fonction arrêt de bus_______
-        function jpp(){
+        function arretBus(){
 
             if(scoreFinal <= 10000){
                 loquace.script([
@@ -114,7 +114,7 @@ function init() {
 
         //__________Fonction jeu pensée intrusive______
         function créerPensée(){
-            if(NPensée >= Pensée.length){return jpp()}
+            if(NPensée >= Pensée.length){return arretBus()}
 
             const BulleVerte = add([
                 sprite('BVerte'),
@@ -147,7 +147,7 @@ function init() {
                 scoreFinal = score;
                 créerPensée(); 
                 console.log(scoreFinal);
-                        etat.retardBus = scoreFinal;
+                etat.retardBus = scoreFinal;
                 play("bubble");
             });
         }

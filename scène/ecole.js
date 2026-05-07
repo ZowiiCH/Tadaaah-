@@ -22,7 +22,7 @@ function init(){
 
         loquace.registerCommand('psy', () => {
             go('psy'),
-            music.stop()
+            music.stop() // Marche pas !
         });
 
         loquace.registerCommand('travail', () => {
@@ -71,7 +71,7 @@ function init(){
 
     })
 
-       let musicActif = false
+    let musicActif = false
 
 
 
@@ -85,6 +85,10 @@ function init(){
                 loop: true,
             });
             musicActif = true
+
+            onSceneLeave(() => {
+                music.stop()
+            })
         }
 
         let concentration = 50; // commence au milieu
@@ -192,12 +196,14 @@ function init(){
                 "Cui, cui, cui",
                 "j je me demande qu'elle sorte d'oiseau c'est",
                 "po mhm?",
+                "u 'C'oncentres toi !",
                 "travail"
             ],
             'distrait2':[
                 "Hey! Passe moi la balle ! C'est à mon tours de jouer !",
                 "j Hey Jasmine, on jour à la balle au prisionnier après?",
                 "po shuuut, j'essaie de travailler....on regarde à la récré!",
+                "u 'C'oncentres toi !",
                 "travail"
             ],
             'distrait3':[
@@ -210,6 +216,7 @@ function init(){
             'hyp1':[
                 "e Pour le devoir....",
                 "j J'ai pas écouté la consigne avant de commencer...",
+                "u 'C'oncentres toi !",
                 "travail"
                 ],
             'hyp2':[
@@ -217,6 +224,7 @@ function init(){
                 "j Ce sont les Koala ! ",
                 "e Juste,mais levez la main avant de prendre la parole.",
                 "j Mince, des fois j'arrive pas à m'empêcher de parler....",
+                "u 'C'oncentres toi !",
                 "travail"
             ],
             'hyp3':[

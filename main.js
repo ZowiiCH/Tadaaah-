@@ -107,6 +107,7 @@ loquace.characters({
 
 //______Scène
 loadSprite('menu', '/assets/menu.png');
+loadSprite('fin', '/assets/fin.png');
 
 loadSprite('chambre','/assets/chambre.png');
 loadSprite('chambre2','/assets/chambre2.png');
@@ -205,8 +206,11 @@ loadSound("music", "assets/menu.mp3");
 loadSound("chambreJeu", "assets/chambreJeu.mp3");
 loadSound("musicBus", "assets/bus.mp3");
 loadSound("musicPsy", "assets/psy.mp3");
+loadSound("musicPsy2", "assets/psy2.mp3");
+loadSound("juste", "assets/juste.mp3");
+loadSound("faux", "assets/faux.mp3");
 loadSound("musicEcole", "assets/ecole.mp3");
 loadSound("ecoleJeu", "assets/ecoleJeu.mp3");
 loadSound("bubble", "assets/bubble.mp3");
 
-go('ecole') 
+go('fin') 
