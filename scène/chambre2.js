@@ -31,11 +31,11 @@ function init(){
         );
         
         loquace.script([
-            "e Ca fait un mois que tu as commencé le traitement. Comment est ce que tu te sens?",
-            "j Plus calme, c'est plus simple pour me préparer le matin et faire mes devoirs.",
-            "e C'est vrai, mais cela me manque quand tu chantonnais en les faisant.",
-            "j Oui c'est vrai, je t'ai fais découvrire plein de mélodies!",
-            "e Oui, cela me manque. Tu en inventais tous le temps.",
+            "e Tu as commencé le traitement depuis un mois. Comment tu te sens?",
+            "j Plus calme, c'est plus simple le matin et pour faire mes devoirs.",
+            "e C'est vrai,  cela me manque quand tu chantonnais en les faisant.",
+            "j Oui c'est vrai, j'ai arrêté de chanter...",
+            "e Oui, cela me manque. Tu inventais tous le temps des mélodies.",
             "e Allez c'est l'heure d'aller prendre le bus!",
             "m Prends vite tes affaires !"
         ]);
@@ -94,7 +94,7 @@ function init(){
             destroy(sac)
             devoir.play("trouvé")
             loquace.script([
-                "Facile à trouver quand c'est rangé",
+                "Facile à trouver quand c'est rangé !",
                 "bus2",
             ]);
             loquace.registerCommand('bus2', () => {

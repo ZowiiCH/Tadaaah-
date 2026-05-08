@@ -195,10 +195,7 @@ loadSprite('pull', '/assets/pull.png', {
             "cligno": { from: 0, to: 1, loop: true } 
             } 
 })
-loadSprite('bubble', '/assets/bubble.png',{
-    sliceX: 2,
-    sliceY: 2,
-})
+loadSprite('bubble', '/assets/bubble.png')
 loadSprite('BVerte', 'assets/bulleVerte.png')
 
 //____Son
@@ -213,4 +210,4 @@ loadSound("musicEcole", "assets/ecole.mp3");
 loadSound("ecoleJeu", "assets/ecoleJeu.mp3");
 loadSound("bubble", "assets/bubble.mp3");
 
-go('fin') 
+go('menu') 

@@ -17,8 +17,6 @@ function init() {
             loop: true, 
         });
 
-
-        
         let début = 0
 
         onButtonPress("space", () =>{

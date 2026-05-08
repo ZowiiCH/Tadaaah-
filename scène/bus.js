@@ -13,6 +13,10 @@ function init() {
             loop: true,
         });
 
+        onSceneLeave(() => {
+            music.stop()
+        });
+
         add([
             sprite('bus'),
         ]);
@@ -31,20 +35,20 @@ function init() {
     
         if(etat.retardMaison < 4){
             loquace.script(["j Même pas eu besoin de courir pour prendre le bus !",
-                            "j J'ai le temps avant mon arrêt",
-                            "m Clique sur les pensées intrusives pour les faire disparaitre !",
+                            "j Il faut pas que je rate mon arrêt !.",
+                            "m Cliques sur les pensées intrusives pour les faire disparaitre !",
                             "jeu"
             ])
         }else if(etat.retardMaison > 6){
-            loquace.script(["j J'ai du prendre le bus d'après... Je vais être en retard....",
-                            "j J'ai le temps avant mon arrêt",
-                            "m Clique sur les pensées intrusive pour les faire disparaitre !",
+            loquace.script(["j J'ai pris le bus d'après... Je vais être en retard....",
+                            "j Il faut pas que je rate mon arrêt !",
+                            "m Cliques sur les pensées intrusive pour les faire disparaitre !",
                             "jeu"
         ])
         } else{        
             loquace.script(["j J'ai du courir pour attraper le bus!",
-                            "j C'est bon j'ai le temps avant mon arrêt",
-                            "m Clique sur les pensées intrusive pour les faire disparaitre !",
+                            "j Il faut pas que je rate mon arrêt !",
+                            "m Cliques sur les pensées intrusive pour les faire disparaitre !",
                             "jeu"
             ])};
 
@@ -55,15 +59,15 @@ function init() {
             "j'ai bien pris toutes mes affaires?", 
             "Maman sait que je fais pas exprès", 
             "Je me sens coupable...", 
-            "J'ai trop aimé le dernier épisode de Naruto",
+            "J'ai trop aimé le dernier épisode de Boruto",
             "On va faire quoi à l'école aujourd'hui?",
-            "Il fait beau",
+            "Il fait trop beau !",
             "J'aimerais aller jouer dehors",
-            "j'ai un peu peur du rendez-vous au psychologue",
+            "j'ai un peu peur du RDV avec la psychologue",
             "J'espère que le repas de la cantine sera bon",
             "Stylé le manteau de la dame, on dirait Matrix en orange",
-            "mhm... c'est quoi se batiment?",
-            "C'est quoi cette rue?",
+            "Mhm... c'est quoi ce batiment?",
+            "Je suis dans quel rue?",
             "Ouf, j'ai eu peur d'avoir raté mon arrêt",
             "J'aimerais trop aller au Zoo ce week-end",
             "Comme pour l'anniversaire de Jasmine !",
@@ -73,7 +77,7 @@ function init() {
             "faut pas que j'oublie ce soir",
             "des fois, j'ai envie, mais je me sens paralisé",
             "c'est comme si y'avait un mur dans ma tête",
-            "ça me rend triste et en colère.",
+            "ça me rend triste et après ça me met colère.",
         ];
 
         let NPensée = 0
@@ -85,7 +89,7 @@ function init() {
 
             if(scoreFinal <= 10000){
                 loquace.script([
-                    "Ha ! C'est mon arrêt !",
+                    "j Ha ! C'est mon arrêt !",
                     "goecole"
                 ]);
                 music.stop();
@@ -97,18 +101,28 @@ function init() {
                     anchor('center'),
                     pos(450,280),
                     area(),
-                ])
-                const auSecour = add([
-                        text(["HO NON J'AI RATE MON ARRET"],{ size: 24, width: 200 }),
-                        color(BLACK),
-                        anchor('center'), 
-                        pos(BulleRouge.pos), 
+                    scale(2),
                 ])
 
+                BulleRouge.add([
+                    text("HO NON J'AI RATÉ MON ARRÊT", { size: 20, width: 158 }),
+                    color(BLACK),
+                    anchor('center'),
+                    pos(0, 0), 
+                ]);
+
                 BulleRouge.onClick(() => {
-                        music.stop();
-                        go('ecole');
-                })
+                    wait(2, () => {
+                        play("bubble"),
+                        destroy(BulleRouge),
+                        loquace.script([
+                            "j Je vais sortir au prochain et marcher",
+                            "j le prof va pas être content...",
+                            "goecole"
+                        ]);
+                    })
+
+                });
             }
         }
 

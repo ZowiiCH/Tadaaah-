@@ -36,7 +36,7 @@ function init() {
         loquace.script([
             "j Je rate presque plus le bus,",
             "j j'ai moins peur qu'avant d'être en retard",
-            "m clique sur les pensées intrusive pour les faire disparaitre !",
+            "m clique sur les pensées intrusives pour les faire disparaitre !",
             "jeu"       
         ]);
 
@@ -44,8 +44,8 @@ function init() {
 
         let Pensée = [
             "C'est vrai, je perd moins mes affaires",
-            "Jasmine m'a dit que je faisais moins de bruit en classe.",
-            "Elle dit aussi que je faisais moins de blagues...",
+            "Jasmine m'a dit que je fais moins de bruit en classe.",
+            "Elle dit aussi que je fais moins de blagues...",
             "il m'arrive d'avoir mal à la tête maintenant",
             "ha! Il me reste trois arrêts",
             "Lucas m'a dit que les histoires que j'inventais lui manques",

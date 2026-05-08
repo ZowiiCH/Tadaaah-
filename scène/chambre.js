@@ -26,8 +26,8 @@ function init(){
 
         onButtonPress("space",()=> {loquace.next()});
             loquace.script([
-                "j Où sont mes devoirs ?? Vite, je vais raté le bus !!",
-                "chercher m Clique sur les objets pour chercher tes devoirs !",
+                "j Où sont mes devoirs ?? Vite, je vais rater le bus !!",
+                "chercher m Cliques sur les objets pour chercher tes devoirs !",
 
             ]);
 
@@ -51,12 +51,12 @@ function init(){
             function pression(){if(etat.retardMaison === 3){
 
                 console.log("retard3")
-                    wait(1.3, () =>
+                    wait(1.2, () =>
                         loquace.script(["u Je vais devoir courir pour prendre le bus !"
                     ]))
                 }else if(etat.retardMaison === 6){
                         console.log("retard6")
-                    wait(1.3, () =>
+                    wait(1.2, () =>
                         loquace.script(["u Ho non, j'ai raté le bus...",
                     ]))
                 }
@@ -86,7 +86,7 @@ function init(){
                 console.log(etat.retardMaison);
                 sac.destroy();
                 loquace.script(
-                    ["j Ca aurait été trop simple..."]
+                    ["j J'ai pas préparé mon sac hier..."]
                 );
                 pression();
                 music.speed += 0.05
@@ -116,7 +116,7 @@ function init(){
                 etat.retardMaison += 1;
                 console.log(etat.retardMaison);
                 loquace.script(
-                    ["j Elle est trop petite pour y mettre ses devoirs..."]
+                    ["j Elle est trop petite pour y mettre mes devoirs..."]
                 );
                 box.destroy();
                 pression();
@@ -138,7 +138,7 @@ function init(){
                 etat.retardMaison += 1;
                 console.log(etat.retardMaison);
                 loquace.script(
-                    ["j Je devrais jeter mes brouillons"]
+                    ["j Je devrais jeter mes brouillons."]
                 );
                 feuille.destroy();
                 pression();
@@ -169,7 +169,7 @@ function init(){
                 etat.retardMaison += 1;
                 console.log(etat.retardMaison);
                 loquace.script(
-                    ["j il devrait être au linge sale"]
+                    ["j il devrait être au linge sale."]
                 );
                 jean.destroy();
                 pression();
@@ -200,7 +200,7 @@ function init(){
                 etat.retardMaison += 1;
                 console.log(etat.retardMaison);
                 loquace.script(
-                    ["j Mes fiches d'allemend ! Je les avais perdu"]
+                    ["j Mes fiches d'allemand ! Je les avais perdu."]
                 );
                 oreiller.destroy();
                 pression();
@@ -270,7 +270,7 @@ function init(){
                 console.log(etat.retardMaison)
                 devoir.play("trouvé")
                 loquace.script(
-                    ["j Trouvé! J'avais oublié que j'avais ''rangé'' mon bureau hier",
+                    ["j Trouvé! J'ai pas vraiment ''rangé'' mon bureau hier",
                     "u Vite, le bus !",
                     "bus"]
                 )

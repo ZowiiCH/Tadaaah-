@@ -31,28 +31,28 @@ function init(){
         });
 
         ////////////////// Dialogues différenciers suivant le retard //////////////
-        if(etat.retardMaison >= 3 && etat.retardBus >=10000){
+        if(etat.retardMaison >= 6 && etat.retardBus >=10000){
             onButtonPress("space",()=> {
                 loquace.next( )
             });
             loquace.script([
-                "e Bonjour, c'est un reccord pour un retard.",
-                "j Bonjour, je suis désolé....",
+                "e Bonjour, c'est un record pour un retard.",
+                "j Bonjour, désolé....",
                 "e il va me falloir votre agenda, c'est une heure d'arrêt.",
-                "j Mes parents bont me butté...",
-                "m Le cours à commencer, appuie sur 'C' pour rester te concentrer !",
+                "j Mes parents vont me tuer...",
+                "m Le cours a commencé, appuies sur 'C' pour rester te concentrer !",
                 "travail"
             ]);
-        }else if(etat.retardMaison >= 3 && etat.retardBus < 10000 ||etat.retardMaison < 3 && etat.retardBus > 10000){         
+        }else if(etat.retardMaison >= 6 && etat.retardBus < 10000 ||etat.retardMaison < 3 && etat.retardBus > 10000){         
             onButtonPress("space",()=> {
                 loquace.next( )
             });
             loquace.script([
                 "e Bonjour ! Encore une arrivée tardive.",
-                "j Bonjour, je suis désolé....",
-                "e C'est le dernier avertissement, la prochaine fois ce sera l'heure d'arrêt.",
-                "j ouf, je l'ai échapé belle, mais je peux plus faire d'erreur....",
-                "m Le cours à commencer, appuie sur 'C' pour rester te concentrer ! ",
+                "j Bonjour, désolé....",
+                "e C'est le dernier avertissement, la prochaine fois c'est l'heure d'arrêt.",
+                "j ouf, je l'ai échappé belle, mais je peux plus faire d'erreur....",
+                "m Le cours a commencé, appuies sur 'C' pour rester te concentrer ! ",
                 "travail"
             ]);
         }else{
@@ -63,8 +63,8 @@ function init(){
                 "e Bonjour ! Cela fait plaisir de vous voir à l'heure.",
                 "j Bonjour, merci Monsieur ! J'essaie vraiment de faire des efforts.",
                 "e Oui et cela se voit. Continuez ainsi !",
-                "j J'ai commencé à bien utilisé mon réveil et mon timer.",
-                "m Le cours à commencer, appuie sur 'C' pour rester te concentrer !",
+                "j J'ai commencé à bien utiliser mon réveil et mon timer.",
+                "m Le cours a commencé, appuies sur 'C' pour rester te concentrer !",
                 "travail"
             ]);
         }
@@ -128,7 +128,7 @@ function init(){
         z(2),
         ]);
 
-        // Zone hyperfocus (orange, à droite)
+        // Zone hyperfocus (rouge à droite)
         barFond.add([
         rect(165, 30),
         pos(345, 0),
@@ -193,24 +193,24 @@ function init(){
 
         loquace.script({
             'distrait1':[
-                "Cui, cui, cui",
-                "j je me demande qu'elle sorte d'oiseau c'est",
+                "Cui, cui, cui !",
+                "j Je me demande quelle sorte d'oiseau c'est.",
                 "po mhm?",
                 "u 'C'oncentres toi !",
                 "travail"
             ],
             'distrait2':[
-                "Hey! Passe moi la balle ! C'est à mon tours de jouer !",
-                "j Hey Jasmine, on jour à la balle au prisionnier après?",
+                "Hey! Passes moi la balle ! C'est à mon tours de jouer !",
+                "j Hey Jasmine, on joue à la balle aux prisionniers après?",
                 "po shuuut, j'essaie de travailler....on regarde à la récré!",
                 "u 'C'oncentres toi !",
                 "travail"
             ],
             'distrait3':[
-                "j pff... il y'a vraiment trop de bruit aujourd'hui",
-                "e Bon, c'est la troisième fois que vous distrayez vous camarades, amenez moi votre carnet",
-                "j Cela me fatigue, pourant j'essaie....",
-                "j j'ai rendez-vous avec la psy après l'école, j'espère qu'elle pourra m'aider",
+                "j pff... il y'a vraiment trop de bruit aujourd'hui.",
+                "e C'est la troisième fois que vous distrayez vous camarades, amenez-moi votre carnet.",
+                "j Pourant j'essaie de travailler...",
+                "j J'ai rendez-vous avec la psy après l'école, j'espère qu'elle pourra m'aider.",
                 "psy"
             ],
             'hyp1':[
@@ -228,11 +228,11 @@ function init(){
                 "travail"
             ],
             'hyp3':[
-                "po Hey, tu es à nouveau entrain de faire tramblé toute la table avec ta jambe!",
+                "po Hey, tu fais trambler toute la table avec ta jambe!",
                 "e On n'entend que vous, au fond de la classe!",
-                "j Pardon, quand je me concentre, je me rend pas compte...",
-                "e Il faut apprendre à rester calme pour travailler, amenez moi votre carnet ",
-                "j j'ai rendez-vous avec la psy après l'école, j'espère qu'elle pourra m'aider",
+                "j Pardon, j'étais concentré, je me rendais pas compte...",
+                "e Il faut rester calme pour travailler, amenez-moi votre carnet.",
+                "j j'ai rendez-vous avec la psy après l'école, j'espère qu'elle pourra m'aider.",
                 "psy"
             ]
         });

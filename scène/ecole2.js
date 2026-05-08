@@ -26,14 +26,15 @@ function init(){
         });
 
         loquace.script([
-            "e Bonjour ! Seconde semaine, sans arrivée tardive.",
-            "e vous avez même vos devoirs,  félicitation !",
+            "e Bonjour ! Encore une journée sans arrivée tardive.",
+            "e vous avez aussi fait tous vos devoirs, bravo !",
             "j Merci Madame.",
             "e Vous coupez moins la parole",
             "e mais, vous participez moins en classe.",
-            "j Oui, c'est vrai, je sais pas pourquoi...mais je vous écoutes! Promis !",
+            "j Oui, c'est vrai...mais, je vous écoutes! Promis !",
             "e Je vous crois. Vous avez souvent de bonne idée, osez les dire!",
             "e Allez c'est l'heure, le cours commence.",
+            "u 'C'oncentres toi !",
             "travail2"
         ]);
 
@@ -153,22 +154,23 @@ function init(){
         
     loquace.script({
         'hyp1':[
-                "po C'est cool que tu te fasse moins grondé",
-                "po mais, on rigole plus trop depuis que tu fais moins de blagues",
+                "po C'est cool que tu te fasses moins grondé.",
+                "po mais, on rigole plus trop depuis que tu fais moins de blagues.",
+                "j C'est vrai, ça me manques aussi !",
                 "u 'C'oncentres toi !",
                 "travail2"
             ],
         'hyp2':[
-            "po Tiens ça t'arrives encores des fois des te balancer sur ta chaise !",
+            "po Il t'arrives encores des te balancer sur ta chaise !",
             "j Oui, je ne suis plus distrait, mais des fois j'ai mal à la tête,",
-            "j est ce que je me concentre trop?",
+            "j est-ce que je me concentre trop?",
             "u 'C'oncentres toi !",
             "travail2"
         ],
         'hyp3':[
             "e Cela fait trois fois que je vous apelle.",
             "j Je suis désolé, je vous ai pas entendu.",
-            "e Le cours est fini, vous pouvez me rendre ce que vous avez fait.",
+            "e Le cours est fini, rendez-moi ce que vous avez fait.",
             "j Oups, je n'ai pas vu l'heure, j'en parlerais à ma psy!",
             "j On va faire le point aujourd'hui.",
             "psy2"
