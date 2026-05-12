@@ -1,9 +1,9 @@
 #Tadaaah
 
 ## Descriptions
-Dans Tadaaah, vous incarnez un enfant et l'accompagnez au travers d'une journée banale de son quotidien. Vous expérimentez aux travers de divers petits jeux ces difficultée et découvrez l'origine. 
+Dans Tadaaah, vous incarnez un enfant et l'accompagnez au travers d'une journée banale de son quotidien. Vous expérimentez aux travers de divers petits jeux ses difficultées quotidiennes et en découvrez l'origine. 
 
-Le but de ce jeu est de sensibilisé au trouble déficit de l'attention avec ou sans hypercativité. 
+Le but de ce jeu est de sensibiliser au trouble du déficite de l'attention avec ou sans hypercativité. 
 
 au moins une capture illustrant votre travail ; attention, pour la VR, un GIF est requis
 ## Procédure d’installation / de lancement
@@ -23,7 +23,7 @@ Prompt :
 Salut Claude, on m'a passé ce bout de code, d'un autre étudiant qui a fait un système de barre. J'aimerais l'adapté à mon jeu, mais je ne comprend pas bien comment il fonctionne, peux tu me le commenté avec des explications par étapes?
 
 ###2
-M'aidez à réalisé techniquement des processus que j'avais en tête, car il m'arrivait d'avoir une idée conceptuel de comment le réalise sans en connaître l'aspect technique.
+M'aidez à réaliser techniquement des processus que j'avais en tête, car il m'arrivait d'avoir une idée conceptuel de comment le réalise sans en connaître l'aspect technique.
 
 Prompt : 
 Salut claude ! Voici le script pour ma scène chez les psy. J'aimerais faire un quizz avec des boutons. L'objectif est que pour chaque symptômes (symp1 à 6) l'enfant doive validé la bonne réponse a pour un symptome de l'attention et h pour un de l'hyperactivité. J'ai créé une variable correct avec a chaque fois associé les symptomes avec la bonne réponse. J'aimerais faire une condition de réponse qui vérifie lorsque l'enfant clique sur un réponse si c'est la bonne ou non et fasse une réponse avec loquace différente.  Cependant, je ne sais pas comment aller chercher l’élément dans ma variable tableau.
