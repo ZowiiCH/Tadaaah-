@@ -1,4 +1,4 @@
-import { etat } from "/scène/retard.js";
+import { etat } from "./retard.js";
 
 export{
     init
@@ -135,8 +135,7 @@ function init(){
 
             curseur.pos.x = 50 + (concentration / maxConcentration) * 500;
 
-            if(concentration > ZONE_HYPERFOCUS) {
-                labelEtat.color = YELLOW;
+            if(concentration >= ZONE_HYPERFOCUS) {
                 etat.hyperfocal ++;
                 actif = false;
                 get("barreConcentration").forEach(o => destroy(o));

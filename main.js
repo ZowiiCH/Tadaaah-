@@ -1,17 +1,17 @@
 import kaplay from "https://unpkg.com/kaplay@3001.0.19/dist/kaplay.mjs";
-import * as menu from "/scène/menu.js"; 
-import * as chambre from "/scène/chambre.js";
-import * as bus from "/scène/bus.js";
-import * as ecole from "/scène/ecole.js";
-import * as psy from "/scène/psy.js";
-import * as chambre2 from "/scène/chambre2.js";
-import * as bus2 from "/scène/bus2.js";
-import * as ecole2 from "/scène/ecole2.js";
-import * as psy2 from "/scène/psy2.js";
-import * as fin from "/scène/fin.js";
+import * as menu from "./scene/menu.js"; 
+import * as chambre from "./scene/chambre.js";
+import * as bus from "./scene/bus.js";
+import * as ecole from "./scene/ecole.js";
+import * as psy from "./scene/psy.js";
+import * as chambre2 from "./scene/chambre2.js";
+import * as bus2 from "./scene/bus2.js";
+import * as ecole2 from "./scene/ecole2.js";
+import * as psy2 from "./scene/psy2.js";
+import * as fin from "./scene/fin.js";
 
 //__________________________loquace_________________________
-import { loquacePlugin , clear } from "/loquace.js";
+import { loquacePlugin , clear } from "./loquace.js";
 
 const k = kaplay({
     buttons: {
@@ -20,6 +20,10 @@ const k = kaplay({
         },
     },
     plugins: [loquacePlugin],
+    width : 960,
+    height : 600,
+    stretch : true,
+    letterbox : true,
 });
 
 loquace.init();
@@ -106,42 +110,42 @@ loquace.characters({
 //_________________________ SPRITES___________________________
 
 //______Scène
-loadSprite('menu', '/assets/menu.png');
-loadSprite('fin', '/assets/fin.png');
+loadSprite('menu', './assets/menu.png');
+loadSprite('fin', './assets/fin.png');
 
-loadSprite('chambre','/assets/chambre.png');
-loadSprite('chambre2','/assets/chambre2.png');
+loadSprite('chambre','./assets/chambre.png');
+loadSprite('chambre2','./assets/chambre2.png');
 
-loadSprite('bus', '/assets/bus.png');
-loadSprite('bus2', '/assets/bus2.png');
+loadSprite('bus', './assets/bus.png');
+loadSprite('bus2', './assets/bus2.png');
 
-loadSprite('ecole','/assets/école.png');
-loadSprite('ecole2','/assets/école2.png');
+loadSprite('ecole','./assets/école.png');
+loadSprite('ecole2','./assets/école2.png');
 
-loadSprite('psy','/assets/buro.png');
-loadSprite('psy2','/assets/buro2.png');
+loadSprite('psy','./assets/buro.png');
+loadSprite('psy2','./assets/buro2.png');
 
 //_____Autres
 
-loadSprite('self','/assets/self.png',{
+loadSprite('self','./assets/self.png',{
     sliceX: 7,
     sliceY: 4,
 })
-loadSprite('sac', '/assets/sac.png', {
+loadSprite('sac', './assets/sac.png', {
     sliceX: 1,
     sliceY: 2,
     anims:{
             "cligno": { from: 0, to: 1, loop: true } 
             } 
 })
-loadSprite('sac2', '/assets/sac2.png', {
+loadSprite('sac2', './assets/sac2.png', {
     sliceX: 1,
     sliceY: 2,
     anims:{
             "cligno": { from: 0, to: 1, loop: true } 
             } 
 })
-loadSprite('box', '/assets/box.png', {
+loadSprite('box', './assets/box.png', {
     sliceX: 1,
     sliceY: 2,
     anims:{
@@ -149,7 +153,7 @@ loadSprite('box', '/assets/box.png', {
         }
      } 
 )
-loadSprite('devoir', '/assets/devoir.png', {
+loadSprite('devoir', './assets/devoir.png', {
     sliceX: 2,
     sliceY: 2,
     anims:{
@@ -158,7 +162,7 @@ loadSprite('devoir', '/assets/devoir.png', {
         }
      } 
 )
-loadSprite('devoir2', '/assets/devoir2.png', {
+loadSprite('devoir2', './assets/devoir2.png', {
     sliceX: 2,
     sliceY: 2,
     anims:{
@@ -167,47 +171,47 @@ loadSprite('devoir2', '/assets/devoir2.png', {
         }
      } 
 )
-loadSprite('feuille', '/assets/feuille.png', {
+loadSprite('feuille', './assets/feuille.png', {
     sliceX: 1,
     sliceY: 2,
     anims:{
             "cligno": { from: 0, to: 1, loop: true } 
             } 
 })
-loadSprite('jean', '/assets/jean.png', {
+loadSprite('jean', './assets/jean.png', {
     sliceX: 1,
     sliceY: 2,
     anims:{
             "cligno": { from: 0, to: 1, loop: true } 
             } 
 })
-loadSprite('oreiller', '/assets/oreiller.png', {
+loadSprite('oreiller', './assets/oreiller.png', {
     sliceX: 1,
     sliceY: 2,
     anims:{
             "cligno": { from: 0, to: 1, loop: true } 
             } 
 })
-loadSprite('pull', '/assets/pull.png', {
+loadSprite('pull', './assets/pull.png', {
     sliceX: 1,
     sliceY: 2,
     anims:{
             "cligno": { from: 0, to: 1, loop: true } 
             } 
 })
-loadSprite('bubble', '/assets/bubble.png')
-loadSprite('BVerte', 'assets/bulleVerte.png')
+loadSprite('bubble', './assets/bubble.png')
+loadSprite('BVerte', './assets/bulleVerte.png')
 
 //____Son
-loadSound("music", "assets/menu.mp3");
-loadSound("chambreJeu", "assets/chambreJeu.mp3");
-loadSound("musicBus", "assets/bus.mp3");
-loadSound("musicPsy", "assets/psy.mp3");
-loadSound("musicPsy2", "assets/psy2.mp3");
-loadSound("juste", "assets/juste.mp3");
-loadSound("faux", "assets/faux.mp3");
-loadSound("musicEcole", "assets/ecole.mp3");
-loadSound("ecoleJeu", "assets/ecoleJeu.mp3");
-loadSound("bubble", "assets/bubble.mp3");
+loadSound("music", "./assets/menu.mp3");
+loadSound("chambreJeu", "./assets/chambreJeu.mp3");
+loadSound("musicBus", "./assets/bus.mp3");
+loadSound("musicPsy", "./assets/psy.mp3");
+loadSound("musicPsy2", "./assets/psy2.mp3");
+loadSound("juste", "./assets/juste.mp3");
+loadSound("faux", "./assets/faux.mp3");
+loadSound("musicEcole", "./assets/ecole.mp3");
+loadSound("ecoleJeu", "./assets/ecoleJeu.mp3");
+loadSound("bubble", "./assets/bubble.mp3");
 
 go('menu') 

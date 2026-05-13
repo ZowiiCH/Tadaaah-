@@ -1,4 +1,4 @@
-import { etat } from "/scène/retard.js";
+import { etat } from "./retard.js";
 
 export{
     init

@@ -1,4 +1,4 @@
-import { etat } from "/scène/retard.js";
+import { etat } from "./retard.js";
 
 export{
     init
@@ -41,6 +41,8 @@ function init(){
         ]);
 
         //////////////sac///////////////////////
+        let sacCliqué = false;
+
         const sac = add([
                     sprite('sac2', {
                         frame: 1}),
@@ -65,6 +67,7 @@ function init(){
             loquace.script([
                 "Oups, j'ai pas mis mes devoirs dans mon sac.",
             ]);
+            let sacCliqué = true;
         }});
 
     /////////////////////////DEvoir////////
@@ -78,7 +81,7 @@ function init(){
             "cligno"
         ]);
 
-        devoir.onHover(() =>{if(début >= 8){
+        devoir.onHover(() =>{if(sacCliqué = true){
             devoir.play("cligno")
             loquace.vn('feuille')
             }
@@ -90,7 +93,7 @@ function init(){
             music.speed += 0.05
         });
 
-        devoir.onClick(()=>{if(début >= 8){
+        devoir.onClick(()=>{if(sacCliqué = true){
             destroy(sac)
             devoir.play("trouvé")
             loquace.script([

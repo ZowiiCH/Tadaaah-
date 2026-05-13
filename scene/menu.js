@@ -39,8 +39,9 @@ function init() {
             if(début >= 1) go('chambre');
         });
 
-        loquace.script([" Appuie sur espace pour faire passer le texte !",
-            "et utiliser la souris pour cliquer sur commencer :)"
+        loquace.script(["Appuie sur espace pour faire passer le texte !",
+            "et la souris pour cliquer sur les éléments ! ",
+            "u cliques sur commencer !"
         ]);
     });   
 }
