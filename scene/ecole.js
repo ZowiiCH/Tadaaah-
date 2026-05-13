@@ -40,7 +40,7 @@ function init(){
                 "j Bonjour, désolé....",
                 "e il va me falloir votre agenda, c'est une heure d'arrêt.",
                 "j Mes parents vont me tuer...",
-                "m Le cours a commencé, appuies sur 'C' pour rester te concentrer !",
+                "u Le cours a commencé, appuies sur 'C' pour rester te concentrer !",
                 "travail"
             ]);
         }else if(etat.retardMaison >= 6 && etat.retardBus < 10000 ||etat.retardMaison < 3 && etat.retardBus > 10000){         
@@ -52,7 +52,7 @@ function init(){
                 "j Bonjour, désolé....",
                 "e C'est le dernier avertissement, la prochaine fois c'est l'heure d'arrêt.",
                 "j ouf, je l'ai échappé belle, mais je peux plus faire d'erreur....",
-                "m Le cours a commencé, appuies sur 'C' pour rester te concentrer ! ",
+                "u Le cours a commencé, appuies sur 'C' pour rester te concentrer ! ",
                 "travail"
             ]);
         }else{
@@ -64,7 +64,7 @@ function init(){
                 "j Bonjour, merci Monsieur ! J'essaie vraiment de faire des efforts.",
                 "e Oui et cela se voit. Continuez ainsi !",
                 "j J'ai commencé à bien utiliser mon réveil et mon timer.",
-                "m Le cours a commencé, appuies sur 'C' pour rester te concentrer !",
+                "u Le cours a commencé, appuies sur 'C' pour rester te concentrer !",
                 "travail"
             ]);
         }
@@ -210,7 +210,7 @@ function init(){
                 "j pff... il y'a vraiment trop de bruit aujourd'hui.",
                 "e C'est la troisième fois que vous distrayez vous camarades, amenez-moi votre carnet.",
                 "j Pourant j'essaie de travailler...",
-                "j J'ai rendez-vous avec la psy après l'école, j'espère qu'elle pourra m'aider.",
+                "j Je vois la psy après l'école, j'espère qu'elle pourra m'aider.",
                 "psy"
             ],
             'hyp1':[
@@ -232,7 +232,7 @@ function init(){
                 "e On n'entend que vous, au fond de la classe!",
                 "j Pardon, j'étais concentré, je me rendais pas compte...",
                 "e Il faut rester calme pour travailler, amenez-moi votre carnet.",
-                "j j'ai rendez-vous avec la psy après l'école, j'espère qu'elle pourra m'aider.",
+                "j Je vois la psy après l'école, j'espère qu'elle pourra m'aider.",
                 "psy"
             ]
         });

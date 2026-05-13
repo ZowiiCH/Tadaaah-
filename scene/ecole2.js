@@ -94,8 +94,8 @@ function init(){
 
         // Zone hyperfocus ( une zone ici)
         barFond.add([
-            rect(30, 30),
-            pos(480, 0),
+            rect(35, 30),
+            pos(475, 0),
             color(RED),
             z(2),
         ]);
