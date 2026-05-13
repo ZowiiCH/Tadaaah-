@@ -17,31 +17,30 @@ function init() {
             loop: true, 
         });
 
-        let début = 0
-
         onButtonPress("space", () =>{
-            loquace.next(), 
-            début ++, 
-            console.log(début)
+            loquace.next()
         });
-    
-        const bouton = add([
-            rect(350,90),
-            pos(width()/2, height()/2 - 100),
-            pos(305,420),
-            opacity(0),
-            area(),
+        
+        loquace.registerCommand('next', () => {
+            const bouton = add([
+                rect(350,90),
+                pos(width()/2, height()/2 - 100),
+                pos(305,420),
+                opacity(0),
+                area(),
+            ]);
+
+            bouton.onClick(() => {
+                music.stop();
+                go('chambre');
+            });
+        });
+
+        loquace.script(["Appuie sur espace ou cliques avec la souris pour faire passer le texte !",
+            "et cliques sur les éléments pour intéragir avec! ",
+            "u cliques sur commencer !",
+            "next"
         ]);
 
-
-        bouton.onClick(() => {
-            music.stop();
-            if(début >= 1) go('chambre');
-        });
-
-        loquace.script(["Appuie sur espace pour faire passer le texte !",
-            "et la souris pour cliquer sur les éléments ! ",
-            "u cliques sur commencer !"
-        ]);
     });   
 }

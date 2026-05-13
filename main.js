@@ -17,6 +17,7 @@ const k = kaplay({
     buttons: {
         space: {
             keyboard: ["space"],
+            mouse : ["left"]
         },
     },
     plugins: [loquacePlugin],

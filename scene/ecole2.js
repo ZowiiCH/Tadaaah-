@@ -32,7 +32,7 @@ function init(){
             "e Vous coupez moins la parole",
             "e mais, vous participez moins en classe.",
             "j Oui, c'est vrai...mais, je vous écoutes! Promis !",
-            "e Je vous crois. Vous avez souvent de bonne idée, osez les dire!",
+            "e Vous avez souvent de bonne idée, osez les dire!",
             "e Allez c'est l'heure, le cours commence.",
             "u 'C'oncentres toi !",
             "travail2"
@@ -135,11 +135,11 @@ function init(){
 
             curseur.pos.x = 50 + (concentration / maxConcentration) * 500;
 
-            if(concentration >= ZONE_HYPERFOCUS) {
-                etat.hyperfocal ++;
+            if(concentration > ZONE_HYPERFOCUS){
                 actif = false;
+                etat.hyperfocal ++;
                 get("barreConcentration").forEach(o => destroy(o));
-                loquace.start(`hyp${etat.hyperfocal}`)
+                loquace.start(`hyp${etat.hyperfocal}`);
             } else {
                 labelEtat.text = "Concentré";
                 labelEtat.color = GREEN;

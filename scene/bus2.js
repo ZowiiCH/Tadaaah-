@@ -36,7 +36,7 @@ function init() {
         loquace.script([
             "j Je rate presque plus le bus,",
             "j j'ai moins peur qu'avant d'être en retard",
-            "m clique sur les pensées intrusives pour les faire disparaitre !",
+            "u clique sur les pensées intrusives pour les faire disparaitre !",
             "jeu"       
         ]);
 
@@ -86,7 +86,7 @@ function init() {
                     pos(BulleVerte.pos), 
             ]);
 
-            BulleVerte.fadeIn(1.2);
+            BulleVerte.fadeIn(1.1);
 
             NPensée++;
 

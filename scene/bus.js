@@ -36,19 +36,19 @@ function init() {
         if(etat.retardMaison < 4){
             loquace.script(["j Même pas eu besoin de courir pour prendre le bus !",
                             "j Il faut pas que je rate mon arrêt !.",
-                            "m Cliques sur les pensées intrusives pour les faire disparaitre !",
+                            "u Cliques sur les pensées intrusives pour les faire disparaitre !",
                             "jeu"
             ])
         }else if(etat.retardMaison > 6){
             loquace.script(["j J'ai pris le bus d'après... Je vais être en retard....",
                             "j Il faut pas que je rate mon arrêt !",
-                            "m Cliques sur les pensées intrusive pour les faire disparaitre !",
+                            "u Cliques sur les pensées intrusive pour les faire disparaitre !",
                             "jeu"
         ])
         } else{        
             loquace.script(["j J'ai du courir pour attraper le bus!",
                             "j Il faut pas que je rate mon arrêt !",
-                            "m Cliques sur les pensées intrusive pour les faire disparaitre !",
+                            "u Cliques sur les pensées intrusive pour les faire disparaitre !",
                             "jeu"
             ])};
 
@@ -121,7 +121,6 @@ function init() {
                             "goecole"
                         ]);
                     })
-
                 });
             }
         }

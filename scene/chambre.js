@@ -27,7 +27,8 @@ function init(){
         onButtonPress("space",()=> {loquace.next()});
             loquace.script([
                 "j Où sont mes devoirs ?? Vite, je vais rater le bus !!",
-                "chercher m Cliques sur les objets pour chercher tes devoirs !",
+                "u Cliques sur les objets pour chercher tes devoirs !",
+                "chercher"
 
             ]);
 
@@ -270,7 +271,7 @@ function init(){
                 console.log(etat.retardMaison)
                 devoir.play("trouvé")
                 loquace.script(
-                    ["j Trouvé! J'ai pas vraiment ''rangé'' mon bureau hier",
+                    ["u Trouvé! J'ai pas 'vraiment' rangé mon bureau hier",
                     "u Vite, le bus !",
                     "bus"]
                 )

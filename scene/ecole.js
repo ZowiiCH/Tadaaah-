@@ -31,6 +31,7 @@ function init(){
         });
 
         ////////////////// Dialogues différenciers suivant le retard //////////////
+        // Si bus raté + arrêt raté
         if(etat.retardMaison >= 6 && etat.retardBus >=10000){
             onButtonPress("space",()=> {
                 loquace.next( )
@@ -43,7 +44,8 @@ function init(){
                 "u Le cours a commencé, appuies sur 'C' pour rester te concentrer !",
                 "travail"
             ]);
-        }else if(etat.retardMaison >= 6 && etat.retardBus < 10000 ||etat.retardMaison < 3 && etat.retardBus > 10000){         
+            // si pas raté + arrêt raté ou l'inverse bus pas raté mais arrêt raté
+        }else if(etat.retardMaison >= 6 && etat.retardBus < 10000 ||etat.retardMaison < 6 && etat.retardBus > 10000){         
             onButtonPress("space",()=> {
                 loquace.next( )
             });
