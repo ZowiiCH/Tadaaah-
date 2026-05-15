@@ -38,10 +38,10 @@ function init(){
             });
             loquace.script([
                 "e Bonjour, c'est un record pour un retard.",
-                "j Bonjour, désolé....",
+                "j Bonjour, désolé...",
                 "e il va me falloir votre agenda, c'est une heure d'arrêt.",
                 "j Mes parents vont me tuer...",
-                "u Le cours a commencé, appuies sur 'C' pour rester te concentrer !",
+                "u Le cours a commencé, appuie sur 'C' pour rester concentré !",
                 "travail"
             ]);
             // si pas raté + arrêt raté ou l'inverse bus pas raté mais arrêt raté
@@ -51,10 +51,10 @@ function init(){
             });
             loquace.script([
                 "e Bonjour ! Encore une arrivée tardive.",
-                "j Bonjour, désolé....",
+                "j Bonjour, désolé...",
                 "e C'est le dernier avertissement, la prochaine fois c'est l'heure d'arrêt.",
-                "j ouf, je l'ai échappé belle, mais je peux plus faire d'erreur....",
-                "u Le cours a commencé, appuies sur 'C' pour rester te concentrer ! ",
+                "j ouf, je l'ai échappé belle, mais je peux plus faire d'erreur...",
+                "u Le cours a commencé, appuie sur 'C' pour rester concentré ! ",
                 "travail"
             ]);
         }else{
@@ -66,7 +66,7 @@ function init(){
                 "j Bonjour, merci Monsieur ! J'essaie vraiment de faire des efforts.",
                 "e Oui et cela se voit. Continuez ainsi !",
                 "j J'ai commencé à bien utiliser mon réveil et mon timer.",
-                "u Le cours a commencé, appuies sur 'C' pour rester te concentrer !",
+                "u Le cours a commencé, appuie sur 'C' pour rester te concentrer !",
                 "travail"
             ]);
         }
@@ -202,15 +202,15 @@ function init(){
                 "travail"
             ],
             'distrait2':[
-                "Hey! Passes moi la balle ! C'est à mon tours de jouer !",
+                "Hey! Passe-moi la balle ! C'est à mon tour de jouer !",
                 "j Hey Jasmine, on joue à la balle aux prisionniers après?",
-                "po shuuut, j'essaie de travailler....on regarde à la récré!",
-                "u 'C'oncentres toi !",
+                "po shuuut, j'essaie de travailler... on regarde à la récré!",
+                "u 'C'oncentre-toi !",
                 "travail"
             ],
             'distrait3':[
-                "j pff... il y'a vraiment trop de bruit aujourd'hui.",
-                "e C'est la troisième fois que vous distrayez vous camarades, amenez-moi votre carnet.",
+                "j pff... il y a vraiment trop de bruit aujourd'hui.",
+                "e C'est la troisième fois que vous distrayez vos camarades, amenez-moi votre carnet.",
                 "j Pourant j'essaie de travailler...",
                 "j Je vois la psy après l'école, j'espère qu'elle pourra m'aider.",
                 "psy"
@@ -218,15 +218,15 @@ function init(){
             'hyp1':[
                 "e Pour le devoir....",
                 "j J'ai pas écouté la consigne avant de commencer...",
-                "u 'C'oncentres toi !",
+                "u 'C'oncentre-toi !",
                 "travail"
                 ],
             'hyp2':[
-                "e Pour la question numéro 2, qui connait la R..",
-                "j Ce sont les Koala ! ",
-                "e Juste,mais levez la main avant de prendre la parole.",
-                "j Mince, des fois j'arrive pas à m'empêcher de parler....",
-                "u 'C'oncentres toi !",
+                "e Pour la question numéro 2, qui connait la R...",
+                "j Ce sont les koalas ! ",
+                "e Juste, mais levez la main avant de prendre la parole.",
+                "j Mince, des fois j'arrive pas à m'empêcher de parler...",
+                "u 'C'oncentre-toi !",
                 "travail"
             ],
             'hyp3':[

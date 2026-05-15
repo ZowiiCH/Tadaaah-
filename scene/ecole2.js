@@ -21,20 +21,21 @@ function init(){
         onSceneLeave(() => {
             music.stop()
         });
+
         onButtonPress("space",()=> {
             loquace.next( )
         });
 
         loquace.script([
             "e Bonjour ! Encore une journée sans arrivée tardive.",
-            "e vous avez aussi fait tous vos devoirs, bravo !",
+            "e Vous avez aussi fait tous vos devoirs, bravo !",
             "j Merci Madame.",
             "e Vous coupez moins la parole",
             "e mais, vous participez moins en classe.",
-            "j Oui, c'est vrai...mais, je vous écoutes! Promis !",
-            "e Vous avez souvent de bonne idée, osez les dire!",
+            "j Oui, c'est vrai... mais, je vous écoute! Promis !",
+            "e Vous avez souvent de bonnes idées, osez les dire!",
             "e Allez c'est l'heure, le cours commence.",
-            "u 'C'oncentres toi !",
+            "u 'C'oncentre-toi !",
             "travail2"
         ]);
 
@@ -45,8 +46,8 @@ function init(){
     })
 
 
-
-    let musicActif = false
+    let hyperfocal = 0 ;
+    let musicActif = false ;
 
     function barreConcentration2(){
 
@@ -66,8 +67,6 @@ function init(){
         let concentration = 50; 
         let maxConcentration = 100;
         let actif = true;
-        let difficulté = 0;
-        let tombe = -20
 
         // Zones
         const ZONE_HYPERFOCUS = 95;   
@@ -121,9 +120,8 @@ function init(){
         //  touche de concentration
         onKeyPress("c", () => {
             if (!actif) return;
-            difficulté -= -15;
-            concentration = tombe + difficulté; // chaque appui monte la barre
-            // oblige le joueur à finir hyperfocus + il appuie
+            concentration -= 40;
+            vitessChute = vitessChute*1.1;
         });
 
         onUpdate(() => {
@@ -135,44 +133,45 @@ function init(){
 
             curseur.pos.x = 50 + (concentration / maxConcentration) * 500;
 
-            if(concentration > ZONE_HYPERFOCUS){
+            if(concentration > ZONE_HYPERFOCUS){ // marche toujours pas comme il faut....
                 actif = false;
-                etat.hyperfocal ++;
+                hyperfocal += 1;
                 get("barreConcentration").forEach(o => destroy(o));
-                loquace.start(`hyp${etat.hyperfocal}`);
+                loquace.start(`hyp${hyperfocal}`);
             } else {
                 labelEtat.text = "Concentré";
                 labelEtat.color = GREEN;
             }
-    });
+        });
 
-    loquace.registerCommand('psy2', () => {
-        go('psy2')
-    })
+        loquace.registerCommand('psy2', () => {
+            go('psy2')
+        })
 
         
-    loquace.script({
-        'hyp1':[
-                "po C'est cool que tu te fasses moins grondé.",
-                "po mais, on rigole plus trop depuis que tu fais moins de blagues.",
-                "j C'est vrai, ça me manques aussi !",
-                "u 'C'oncentres toi !",
+        loquace.script({
+            'hyp1':[
+                    "po C'est cool que tu te fasses moins gronder.",
+                    "po Mais, on rigole plus trop depuis que tu fais moins de blagues.",
+                    "j C'est vrai, ça me manque aussi !",
+                    "u 'C'oncentre-toi !",
+                    "travail2"
+                ],
+            'hyp2':[
+                "po Il t'arrive encore de te balancer sur ta chaise !",
+                "j Oui, je ne suis plus distrait, mais des fois j'ai mal à la tête,",
+                "j Est-ce que je me concentre trop?",
+                "u 'C'oncentre-toi !",
                 "travail2"
             ],
-        'hyp2':[
-            "po Il t'arrives encores des te balancer sur ta chaise !",
-            "j Oui, je ne suis plus distrait, mais des fois j'ai mal à la tête,",
-            "j est-ce que je me concentre trop?",
-            "u 'C'oncentres toi !",
-            "travail2"
-        ],
-        'hyp3':[
-            "e Cela fait trois fois que je vous apelle.",
-            "j Je suis désolé, je vous ai pas entendu.",
-            "e Le cours est fini, rendez-moi ce que vous avez fait.",
-            "j Oups, je n'ai pas vu l'heure, j'en parlerais à ma psy!",
-            "j On va faire le point aujourd'hui.",
-            "psy2"
-        ]
-    });
-}};
+            'hyp3':[
+                "e Cela fait trois fois que je vous apelle.",
+                "j Je suis désolé, je vous ai pas entendu.",
+                "e Le cours est fini, rendez-moi ce que vous avez fait.",
+                "j Oups, je n'ai pas vu l'heure, j'en parlerai à ma psy!",
+                "j On va faire le point aujourd'hui.",
+                "psy2"
+            ]
+        });
+    };
+};

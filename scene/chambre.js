@@ -27,9 +27,8 @@ function init(){
         onButtonPress("space",()=> {loquace.next()});
             loquace.script([
                 "j Où sont mes devoirs ?? Vite, je vais rater le bus !!",
-                "u Cliques sur les objets pour chercher tes devoirs !",
+                "u Clique sur les objets pour chercher tes devoirs !",
                 "chercher"
-
             ]);
 
 
@@ -201,7 +200,7 @@ function init(){
                 etat.retardMaison += 1;
                 console.log(etat.retardMaison);
                 loquace.script(
-                    ["j Mes fiches d'allemand ! Je les avais perdu."]
+                    ["j Mes fiches d'allemand ! Je les avais perdues."]
                 );
                 oreiller.destroy();
                 pression();
@@ -252,7 +251,7 @@ function init(){
 
             devoir.onHover(() =>{
                 devoir.play("cligno")
-                loquace.vn('tas de feuille')
+                loquace.vn('tas de feuilles')
             });
 
             devoir.onHoverEnd(() =>{    

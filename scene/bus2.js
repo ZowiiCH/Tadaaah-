@@ -43,14 +43,14 @@ function init() {
 //////////////////////////Bulle///////////////////
 
         let Pensée = [
-            "C'est vrai, je perd moins mes affaires",
+            "C'est vrai, je perds moins mes affaires",
             "Jasmine m'a dit que je fais moins de bruit en classe.",
             "Elle dit aussi que je fais moins de blagues...",
             "il m'arrive d'avoir mal à la tête maintenant",
             "ha! Il me reste trois arrêts",
-            "Lucas m'a dit que les histoires que j'inventais lui manques",
+            "Lucas m'a dit que les histoires que j'inventais lui manquent",
             "J'ai moins d'idée et je suis plus calme...",
-            "c'est plus silencieux, mais plus ennuyant aussi....",
+            "c'est plus silencieux, mais plus ennuyant aussi...",
         ];
 
         let NPensée = 0

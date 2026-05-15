@@ -36,9 +36,9 @@ function init() {
             });
         });
 
-        loquace.script(["Appuie sur espace ou cliques avec la souris pour faire passer le texte !",
-            "et cliques sur les éléments pour intéragir avec! ",
-            "u cliques sur commencer !",
+        loquace.script(["Appuie sur espace ou clique avec la souris pour faire passer le texte !",
+            "et clique sur les éléments pour interagir avec! ",
+            "u clique sur commencer !",
             "next"
         ]);
 

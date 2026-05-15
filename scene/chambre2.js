@@ -83,7 +83,7 @@ function init(){
 
         devoir.onHover(() =>{if(sacCliqué = true){
             devoir.play("cligno")
-            loquace.vn('feuille')
+            loquace.vn('feuilles')
             }
         });
 

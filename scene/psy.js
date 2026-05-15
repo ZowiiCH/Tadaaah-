@@ -24,16 +24,16 @@ function init(){
         onButtonPress("space",()=> {loquace.next( )});
         loquace.script([
             "p Bonjour, comment ça va aujourd'hui?",
-            "j Bof...c'était une journée difficile.",
-            "p Ho, je suis désolé. Cette session devrait t'aider.",
+            "j Bof... c'était une journée difficile.",
+            "p Ho, je suis désolée. Cette session devrait t'aider.",
             "p Nous avons les résultats du questionnaire de la semaine passée",
-            "p Le quizz sur le trouble déficite de l'attention avec ou sans hypercativité.",
+            "p Le quizz sur le trouble déficit de l'attention avec ou sans hyperactivité.",
             "j Je me souviens, le Tadaaah, ma soeur l'appelle comme ça !",
             "j mais, on dit le Té-Dé-A-acH normalement",
-            "p Exactement ! Il y'a deux catégories de symptômes.",
+            "p Exactement ! Il y a deux catégories de symptômes.",
             "p L'attetion : c'est ta capacité à te concentrer sur quelque chose.",
             "p et l'hyperactivité : c'est le fait d'avoir trop d'énergie.",
-            "m Pour chaque symptôme, cliques sur le bouton du trouble qui y correspond !",
+            "m Pour chaque symptôme, clique sur le bouton du trouble qui y correspond !",
             "jeu"
         ]);
 
@@ -63,7 +63,7 @@ function init(){
                 destroy(boutonA),
                 destroy(boutonH),
                 loquace.script(["m Bravo, tu as fini le quizz !",
-                    "p Il y'a beaucoup de symtômes différents.",
+                    "p Il y a beaucoup de symtômes différents.",
                     "p D'après les résultats, tu es TDAH",
                     "p Tu va tester un médicament.",
                     "p On se revoit dans un mois pour faire le point!",
@@ -80,16 +80,16 @@ function init(){
                 "m avoir besoin de toujours bouger, se tortiller."
             ],
             'sympt2':[
-                "m perdre régulièrement ces affaires."
+                "m perdre régulièrement ses affaires."
             ],
             'sympt3':[
-                "m coupez la parole aux autres."
+                "m couper la parole aux autres."
                 ],
             'sympt4':[
                 "m se faire distraire par ce qui nous entoure."
             ],
             'sympt5':[
-                "m parlez souvent trop."
+                "m parler souvent trop."
             ]
         });
 
@@ -164,7 +164,7 @@ function init(){
             }else{
                 play("faux")
                 loquace.script([
-                    "m Oups, c'est un symptome du déficite de l'attention",
+                    "m Oups, c'est un symptôme du déficit de l'attention.",
                     "suite"
                 ])
             };
