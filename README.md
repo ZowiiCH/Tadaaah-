@@ -5,7 +5,7 @@ Dans Tadaaah, vous incarnez un enfant et l'accompagnez au travers d'une journée
 
 Le but de ce jeu est de sensibiliser au trouble déficit de l'attention avec ou sans hyperactivité. 
 
-![alt-text capture d'écran d'une scène du jeu : salle de classe avec des enfants, barre de concentration pour travailler](https://github.com/ZowiiCH/Tadaaah-/blob/main/capture.png)
+![alt-text capture d'écran d'une scène du jeu : salle de classe avec des enfants, barre de concentration pour travailler](capture.png)
 
 ## Procédure d’installation / de lancement
 Allez sur [itch](https://zowiich.itch.io/tadaaah) et cliquez sur "Run Tadaaah" ou téléchargez tous les fichiers du dépôt. Ensuite, il vous faut ouvrir le fichier "index.html" dans VS Code (ou utiliser un serveur local) et l'ouvrir via "go live" de l'extension "live server extension".
