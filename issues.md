@@ -1,1 +1,0 @@
-Les limites de votre travail ainsi que les possibilités d’amélioration doivent apparaître comme « issues », assorties des étiquettes adéquates (bug, enhancement, etc.)

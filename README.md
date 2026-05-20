@@ -14,12 +14,12 @@ Allez sur [itch](https://zowiich.itch.io/tadaaah) et cliquez sur "Run Tadaaah" o
 ## Modules (loquace)(kaplay)
 
 ### Loquace
-Pour toutes les parties de dialogue, j'ai utilisé le module [Loquace](https://github.com/loiccattani/kaplay-loquace/tree/main)
+Pour toutes les parties de dialogue, j'ai utilisé le module [Loquace](https://github.com/loiccattani/kaplay-loquace/tree/main).
 
 ### Musique
-Pour toutes les musiques du jeu [Retro-BGM-Chan](https://pixabay.com/users/retro-bgm-chan-55246343/)
+Pour toutes les musiques du jeu [Retro-BGM-Chan](https://pixabay.com/users/retro-bgm-chan-55246343/).
 
-### code 
+### Code 
 
 Je me suis basé sur le code d'un collègue, G. Caporizzo, pour réaliser ma barre de concentration dans la partie "école".
 
@@ -36,14 +36,14 @@ Salut Claude, on m'a passé ce bout de code, d'un autre étudiant qui a fait un 
 M'aidez à réaliser techniquement des processus que j'avais en tête, car il m'arrivait de savoir comment conceptuellement réaliser une idée, mais de ne pas avoir la syntaxe exacte.
 
 Prompt : 
-Salut Claude. Voici le script pour ma scène chez les psy. J'aimerais faire un quiz avec des boutons. L'objectif est que pour chaque symptôme (symp1 à 6) l'enfant doive valider la bonne réponse : a pour un symptôme de l'attention et h pour un de l'hyperactivité. J'ai créé une variable correcte avec à chaque fois associé les symptômes avec la bonne réponse. J'aimerais faire une condition de réponse qui vérifie lorsque l'enfant clique sur une réponse si c'est la bonne ou non et fasse une réponse avec loquace différente.  Cependant, je ne sais pas comment aller chercher l’élément dans ma variable tableau.
+Salut Claude. Voici le script pour ma scène chez la psy. J'aimerais faire un quiz avec des boutons. L'objectif est que pour chaque symptôme (symp1 à 6) l'enfant doive valider la bonne réponse : "a" pour un symptôme de l'attention et "h" pour un de l'hyperactivité. J'ai créé une variable "correcte" avec à chaque fois associé les symptômes et la bonne réponse. J'aimerais faire une condition de réponse qui vérifie lorsque l'enfant clique sur une réponse si c'est la bonne ou non et fasse une réponse avec loquace différente.  Cependant, je ne sais pas comment aller chercher l’élément dans ma variable tableau.
 
 ### 3
 Dans le sens inverse, lorsque j'avais une hypothèse sur une partie de mon code que je pensais pouvoir simplifier. Demander à un LLM si mon hypothèse est viable afin de ne pas perdre trop de temps à le tester moi-même.
 
-Prompt ( avec le code transmis):
+Prompt (le code transmis avec):
 "Ici dans ma const correcte, j'ai toute la partie question qui ne sert finalement à rien. Est-ce que je peux simplifier cette variable et par la même simplifier les comparaisons avec la variable bonne réponse et mes condisions if?"
 
 
 ## Contexte
- Ce projet a été développé dans le cadre du cours <Jeu Vidéo 2D > dispensé par Loïc Cattani (SLI, Lettres, UNIL).
+ Ce projet a été développé dans le cadre du cours <Développement de jeux vidéo 2D > dispensé par Loïc Cattani (SLI, Lettres, UNIL).
