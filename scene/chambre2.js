@@ -37,7 +37,7 @@ function init(){
             "j Oui c'est vrai, j'ai arrêté de chanter...",
             "e Oui, cela me manque. Tu inventais tous le temps des mélodies.",
             "e Allez c'est l'heure d'aller prendre le bus!",
-            "m Prends vite tes affaires !"
+            "u Prends vite tes affaires !"
         ]);
 
         //////////////sac///////////////////////

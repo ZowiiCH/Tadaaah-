@@ -33,7 +33,7 @@ function init(){
             "p Exactement ! Il y a deux catégories de symptômes.",
             "p L'attetion : c'est ta capacité à te concentrer sur quelque chose.",
             "p et l'hyperactivité : c'est le fait d'avoir trop d'énergie.",
-            "m Pour chaque symptôme, clique sur le bouton du trouble qui y correspond !",
+            "u Pour chaque symptôme, clique sur le bouton du trouble qui y correspond !",
             "jeu"
         ]);
 
