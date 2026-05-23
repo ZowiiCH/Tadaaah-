@@ -26,7 +26,34 @@ function init() {
             "m C'est aussi une source de créativité et d'énergie !",
             "m J'espère que ce petit jeu t'aura permis de mieux comprendre",
             "m le positif et le négatif du Tadaaah !",
+            "rejouer"
         ])
+
+        loquace.registerCommand('rejouer', () => {
+            rejouer()
+        });
+
+        function rejouer(){
+            let rejouer = add([
+                rect(200,90),
+                pos(580,100),
+                color(GREEN),
+                anchor('center'),
+                area(),
+            ]);
+
+            rejouer.add([
+                text('Rejouer'),
+                pos(0,0),  
+                anchor('center')
+            ])  
+            
+            rejouer.onClick(() => {
+                go('menu')
+            });
+        }
+
+        
 
     });
     
