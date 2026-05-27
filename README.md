@@ -1,11 +1,24 @@
 # Tadaaah
 
 ## Descriptions
-Dans Tadaaah, vous incarnez un enfant et l'accompagnez au travers d'une journée banale de son quotidien. Vous expérimentez au travers de divers petits jeux ses difficultés quotidiennes et en découvrez l'origine. 
+Tadaaah a été développé dans le but de sensibiliser au trouble déficit de l'attention avec ou sans hyperactivité (TDAH). Le jeu tient son nom d'une manière de nommer cette neuro-atypique pour la dédramatiser. Il mobilise des éléments du DSM-5, ainsi que des témoignages et mon propre vécu.
 
-Le but de ce jeu est de sensibiliser au trouble déficit de l'attention avec ou sans hyperactivité. 
+En jouant, vous incarnez un enfant et l'accompagnez dans sa journée. Vous expérimentez au travers de divers petits jeux ses difficultés quotidiennes et en découvrez l'origine.
 
 ![alt-text capture d'écran d'une scène du jeu : salle de classe avec des enfants, barre de concentration pour travailler](capture.png)
+
+## Caractéristiques
+
+Vous vivez deux journées similaires et pourtant très différentes, chaque journée se divise en plusieurs scènes :
+
+    maison
+     bus
+    école 
+    psychologue
+
+Dans chaque scène, vous expérimentez un symptôme du TDAH et vivez les conséquences matérielles et relationnelles, mais aussi l'impact mental que cela peut engendrer. 
+
+Le jeu se joue principalement avec la souris, utilisez le clic pour interagir avec les éléments du jeu et faire passer les dialogues. Dans les scènes "école", l'utilisation de la touche "c" du clavier est nécessaire. 
 
 ## Procédure d’installation / de lancement
 Allez sur [itch](https://zowiich.itch.io/tadaaah) et cliquez sur "Run Tadaaah" ou téléchargez tous les fichiers du dépôt. Ensuite, il vous faut ouvrir le fichier "index.html" dans VS Code (ou utiliser un serveur local) et l'ouvrir via "go live" de l'extension "live server extension".

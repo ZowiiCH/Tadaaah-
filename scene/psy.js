@@ -143,22 +143,22 @@ function init(){
 
         loquace.script({
             'sympt0':[
-                "m se perdre dans ses pensées.", "activer"
+                "m se perdre dans ses pensées.", "activer m se perdre dans ses pensées"
             ],
             'sympt1':[
-                "m avoir besoin de toujours bouger, se tortiller.", "activer"
+                "m avoir besoin de toujours bouger, se tortiller.", "activer m avoir besoin de toujours bouger, se tortiller."
             ],
             'sympt2':[
-                "m perdre régulièrement ses affaires.", "activer"
+                "m perdre régulièrement ses affaires.", "activer m perdre régulièrement ses affaires."
             ],
             'sympt3':[
-                "m couper la parole aux autres.", "activer"
+                "m couper la parole aux autres.", "activer m couper la parole aux autres."
                 ],
             'sympt4':[
-                "m se faire distraire par ce qui nous entoure.", "activer"
+                "m se faire distraire par ce qui nous entoure.", "activer m se faire distraire par ce qui nous entoure."
             ],
             'sympt5':[
-                "m parler souvent trop.", "activer"
+                "m parler souvent trop.", "activer m parler souvent trop."
             ]
         });
 

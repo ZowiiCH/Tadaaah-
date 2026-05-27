@@ -1,3 +1,5 @@
+import { etat } from "./retard.js";
+
 export{
     init
 }
@@ -50,11 +52,11 @@ function init() {
             
             rejouer.onClick(() => {
                 go('menu')
+                etat.retardMaison = 0
+                etat.retardBus = 0
+                etat.distrait = 0
+                etat.hyperfocal = 0
             });
         }
-
-        
-
-    });
-    
+    }); 
 }

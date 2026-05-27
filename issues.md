@@ -4,4 +4,4 @@ Dans la première scène de bus, lorsque vous ratez votre arrêt, je n'ai pas r�
 
 Pistes d'amélioration : 
 
-Dans ce petit jeu, j'ai fait le choix de présenter les quelques différents symptômes indépendant les uns des autres. L'objectif étant de permettre aux enfants de pouvoir bien les différencier individuellement. Il serait cependant intéressant de faire un jeu plus long montrant la complexité du trouble avec la superposition des symptômes, tout en ajoutant des exemples concrets des aspects positifs et des outils/mécanismes permettant de compenser le tadah sans la prise d'un traitement. 
+Dans ce petit jeu, j'ai fait le choix de présenter les quelques différents symptômes indépendants les uns des autres. L'objectif étant de permettre aux enfants de pouvoir bien les différencier individuellement. Il serait intéressant de faire un jeu plus long montrant la complexité du trouble avec la superposition des symptômes. De plus, je rajouterais des éléments interactifs permettant d'expérimenter aussi des aspects positifs et des outils/mécanismes permettant de compenser le tadah sans la prise d'un traitement. 
